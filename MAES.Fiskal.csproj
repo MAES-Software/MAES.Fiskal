@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>MAES.Fiskal</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Roko Tomović</Authors>
     <Company>MAES</Company>
     <Description>Mogućnost fiskalizacije računa u c#.</Description>
