@@ -1,60 +1,24 @@
 # MAES.Fiskal
 
-**MAES.Fiskal** je alat za fiskalizaciju računa razvijen u **C#**. Omogućuje automatsko generiranje i slanje fiskalnih podataka prema važećim propisima.
+**MAES.Fiskal** je alat za fiskalizaciju računa razvijen u **C#** koristeći **.NET 8**. Omogućuje automatsko generiranje i slanje fiskalnih podataka prema važećim propisima.
+
+
 
 ## Značajke
-- Fiskalizacija računa u skladu s propisima
-- Napisan u C# i jednostavan za integraciju u postojeće aplikacije
+- Fiskalizacija računa
+- Fiskalizacija napojnica
 - Besplatan i otvorenog koda
 
 ## Instalacija
-1. Klonirajte repozitorij:
-   ```bash
-   git clone https://github.com/korisnickoime/MAES.Fiskal.git
-Otvorite projekt u Visual Studio ili drugom C# IDE-u
+**Nuget** https://www.nuget.org/packages/MAES.Fiskal
 
-Buildajte projekt i pokrenite
+ili
 
-Korištenje
-Nakon buildanja, možete koristiti funkcije fiskalizacije iz projekta za:
+git clone https://github.com/MAES-Sofware/MAES.Fiskal.git
 
-Kreiranje računa
+## Primjer korištenja
 
-Slanje fiskalnih podataka
+TODO: Napravit primjer korištenja
 
-Provjeru statusa računa
-
-Primjer korištenja:
-
-csharp
-Copy
-Edit
-using MAES.Fiskal;
-
-var fiskal = new FiskalService();
-fiskal.FiskalizirajRacun(racun);
-Doprinos
-Doprinosi su dobrodošli! Ako imate prijedloge ili želite poboljšati projekt, slobodno otvorite pull request.
-
-Licenca
+## Licenca
 Ovaj projekt je besplatan i otvorenog koda. Slobodno ga koristite i prilagođavajte za vlastite potrebe.
-
-css
-Copy
-Edit
-
-Ova verzija je čista, linearna, i GitHub će je prikazati točno kako treba.  
-
-Ako želiš, mogu napraviti **još ljepšu verziju s badge-ovima i primjerom outputa** koja će odmah izgledati profesionalno. Hoćeš da to napravim?
-
-
-
-
-
-
-
-Is this helpful so far?
-
-
-
-Ask ChatGPT
