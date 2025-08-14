@@ -12,18 +12,26 @@ public static class Fiskalizacija
 {
     static ZaglavljeType newZaglavlje => new()
     {
-		DatumVrijeme = DateTime.Now.ToString("dd.MM.yyyyTHH:mm:ss"),
-		IdPoruke = Guid.NewGuid().ToString()
-	};
+        DatumVrijeme = DateTime.Now.ToString("dd.MM.yyyyTHH:mm:ss"),
+        IdPoruke = Guid.NewGuid().ToString()
+    };
 
+    /// <summary>
+    /// Ova metoda pošalje račun na server porezne uprave
+    /// </summary>
+    /// <param name="invoice">Račun koji se šalje</param>
+    /// <param name="certificate">Fiskalni certifikat</param>
+    /// <param name="url">Url adresa za slanje</param>
+    /// <returns>RacunOdgovor</returns>
+    /// <exception cref="ArgumentNullException"></exception>
     public static async Task<RacunOdgovor> SendInvoiceAsync(RacunType invoice, X509Certificate2 certificate, string url)
     {
-        if (invoice == null) throw new ArgumentNullException("invoice");
-        if (certificate == null) throw new ArgumentNullException("certificate");
+        ArgumentNullException.ThrowIfNull(invoice);
+        ArgumentNullException.ThrowIfNull(certificate);
 
         var request = new RacunZahtjev { Racun = invoice, Zaglavlje = newZaglavlje };
 
-        Sign(request, certificate);
+        sign(request, certificate);
 
         using var client = new FiskalizacijaPortTypeClient(new FiskalizacijaPortTypeClient.EndpointConfiguration(), url);
 
@@ -36,43 +44,50 @@ public static class Fiskalizacija
 
         var res = await client.racuniAsync(request) ?? new();
 
-        ThrowOnResponseErrors(res.RacunOdgovor);
+        throwOnResponseErrors(res.RacunOdgovor);
 
         return res.RacunOdgovor;
     }
-
+    
+    /// <summary>
+    /// Pošalji napojnicu za račun
+    /// </summary>
+    /// <param name="invoiceTip">Račun i napojnica za poslat</param>
+    /// <param name="certificate">Fiskalni certifikat</param>
+    /// <param name="url">Url adresa za slanje</param>
+    /// <returns>napojnicaResponse</returns>
     public async static Task<napojnicaResponse> SendInvoiceTipAsync(RacunNapojnicaType invoiceTip, X509Certificate2 certificate, string url)
-	{
-		ArgumentNullException.ThrowIfNull(invoiceTip);
-		ArgumentNullException.ThrowIfNull(certificate);
+    {
+        ArgumentNullException.ThrowIfNull(invoiceTip);
+        ArgumentNullException.ThrowIfNull(certificate);
 
-		var request = new NapojnicaZahtjev
-		{
-			Racun = invoiceTip,
-			Zaglavlje = newZaglavlje
-		};
+        var request = new NapojnicaZahtjev
+        {
+            Racun = invoiceTip,
+            Zaglavlje = newZaglavlje
+        };
 
-		Sign(request, certificate);
+        sign(request, certificate);
 
-		napojnicaResponse res;
+        napojnicaResponse res;
         // new BasicHttpsBinding()
         using (var client = new FiskalizacijaPortTypeClient(new FiskalizacijaPortTypeClient.EndpointConfiguration(), url))
-		{
-			client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication =
-				new X509ServiceCertificateAuthentication()
-				{
-					CertificateValidationMode = X509CertificateValidationMode.None,
-					RevocationMode = X509RevocationMode.NoCheck
-				};
-			res = await client.napojnicaAsync(request);
-		}
+        {
+            client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication =
+                new X509ServiceCertificateAuthentication()
+                {
+                    CertificateValidationMode = X509CertificateValidationMode.None,
+                    RevocationMode = X509RevocationMode.NoCheck
+                };
+            res = await client.napojnicaAsync(request);
+        }
 
-		ThrowOnResponseErrors(res.NapojnicaOdgovor);
+        throwOnResponseErrors(res.NapojnicaOdgovor);
 
-		return res;
-	}
+        return res;
+    }
 
-	static void Sign(dynamic request, X509Certificate2 certificate)
+	static void sign(dynamic request, X509Certificate2 certificate)
     {
         request.Id = request.GetType().Name;
 
@@ -157,7 +172,7 @@ public static class Fiskalizacija
         };
     }
 
-    static void ThrowOnResponseErrors(dynamic response)
+    static void throwOnResponseErrors(dynamic response)
     {
         if (response.Greske is not GreskaType[] greske || greske.Any()) return;
 		throw new Exception($"Greška u fiskalizaciji: {string.Join("\n", greske.Select(x => $"{x.SifraGreske}: {x.PorukaGreske}"))}");
