@@ -1,7 +1,5 @@
 # MAES.Fiskal
 
-**MAES.Fiskal** je alat za fiskalizaciju računa razvijen u **C#** koristeći **.NET 8**. Omogućuje automatsko generiranje i slanje fiskalnih podataka prema važećim propisima.
-
 [![Contributors](https://img.shields.io/github/contributors/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/graphs/contributors)
 [![Forks](https://img.shields.io/github/forks/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/network/members)
 [![Stars](https://img.shields.io/github/stars/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/stargazers)
@@ -9,7 +7,7 @@
 [![License](https://img.shields.io/github/license/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/blob/main/LICENSE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL_HERE)
 
-
+**MAES.Fiskal** je alat za fiskalizaciju računa razvijen u **C#** koristeći **.NET 8**. Omogućuje automatsko generiranje i slanje fiskalnih podataka prema važećim propisima.
 
 ## Značajke
 - Fiskalizacija računa
