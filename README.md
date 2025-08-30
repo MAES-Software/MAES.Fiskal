@@ -79,15 +79,6 @@ var invoice = new RacunType
 };
 ```
 
-### Create an invoiceTipType from invoiceType
-```csharp
-RacunNapojnicaType invoiceTip = invoice.ToInvoiceTipAsnyc(new ()
-{
-    iznosNapojnice = "1.00", // Tip amount
-    nacinPlacanjaNapojnice = acinPlacanjaType.G // Tip type of payment (G - Cash, K - Cards, etc...)
-});
-```
-
 ### Send invoice
 ```csharp
 // Call to service
@@ -98,6 +89,15 @@ if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
 
 // Get jir to store
 string jir = res.Jir;
+```
+
+### Create an invoiceTipType from invoiceType
+```csharp
+RacunNapojnicaType invoiceTip = invoice.ToInvoiceTipAsnyc(new ()
+{
+    iznosNapojnice = "1.00", // Tip amount
+    nacinPlacanjaNapojnice = acinPlacanjaType.G // Tip type of payment (G - Cash, K - Cards, etc...)
+});
 ```
 
 ### Send invoice tip
