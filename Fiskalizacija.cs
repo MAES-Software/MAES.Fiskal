@@ -18,6 +18,8 @@ public static class Fiskalizacija
         IdPoruke = Guid.NewGuid().ToString()
     };
 
+    static readonly X509ServiceCertificateAuthentication SslCertificateAuthentification = new();
+
     /// <summary>
     /// Ova metoda pošalje račun na server porezne uprave
     /// </summary>
@@ -39,12 +41,14 @@ public static class Fiskalizacija
 
         using var client = new FiskalizacijaPortTypeClient(new FiskalizacijaPortTypeClient.EndpointConfiguration(), url);
 
-        // TODO: zapali!
-        client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication = new()
-        {
-            CertificateValidationMode = X509CertificateValidationMode.None,
-            RevocationMode = X509RevocationMode.NoCheck
-        };
+        client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication = SslCertificateAuthentification;
+        // TODO: zapali! -------------------------------------------------------------------------------------------------------
+        // client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication = new()
+        // {
+        //     CertificateValidationMode = X509CertificateValidationMode.None,
+        //     RevocationMode = X509RevocationMode.NoCheck
+        // };
+        // ----------------------------------------------------------------------------------------------------------------------
 
         var res = await client.racuniAsync(request) ?? new();
 
@@ -79,12 +83,7 @@ public static class Fiskalizacija
         napojnicaResponse res;
         using (var client = new FiskalizacijaPortTypeClient(new FiskalizacijaPortTypeClient.EndpointConfiguration(), url))
         {
-            client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication =
-                new X509ServiceCertificateAuthentication()
-                {
-                    CertificateValidationMode = X509CertificateValidationMode.None,
-                    RevocationMode = X509RevocationMode.NoCheck
-                }; // WTF JE OVO!
+            client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication = SslCertificateAuthentification;
             res = await client.napojnicaAsync(request);
         }
 
@@ -131,7 +130,10 @@ public static class Fiskalizacija
         xml.ComputeSignature();
 
         var s = xml.Signature;
-        var certSerial = (X509IssuerSerial)keyInfoData.IssuerSerials[0]; // TODO: WTF JE OVO!
+
+        if (keyInfoData.IssuerSerials[0] is not X509IssuerSerial serial) throw new Exception("There is no issuer serial in supplied certificate");
+
+        var certSerial = serial;
         request.Signature = new SignatureType
         {
             SignedInfo = new SignedInfoType
