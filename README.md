@@ -63,7 +63,7 @@ var invoice = new RacunType
 	IznosUkupno = "12.50", // Total amount (must be format 0.00)
 	NakDost = false,
 	Oib = "51560545524", // Identification number of company
-	OibOper = Korisnik.OIB, // Odentitfication numer of person operating POS
+	OibOper = "51560545524", // Odentitfication numer of person operating POS
 	OznSlijed = OznakaSlijednostiType.N,
     Pdv = [ // Taxes list
         new ()
@@ -73,7 +73,9 @@ var invoice = new RacunType
             Iznos = "2.50" // Tax amount (must be format 0.00)
         }
     ],
-    USustPdv = blagajna.SustavPDV // Does company falls under tax obligation laws
+    Pnp = [], // Fill tax on spending if nececary :S
+    USustPdv = true, // Does company falls under tax obligation laws
+    NacPlac = NacinPlacanjaType.G // Type of payment (G - Cash, K - Cards, etc...)
 };
 ```
 
@@ -81,7 +83,8 @@ var invoice = new RacunType
 ```csharp
 RacunNapojnicaType invoiceTip = invoice.ToInvoiceTipAsnyc(new ()
 {
-    // Fill tip properties here
+    iznosNapojnice = "1.00", // Tip amount
+    nacinPlacanjaNapojnice = acinPlacanjaType.G // Tip type of payment (G - Cash, K - Cards, etc...)
 });
 ```
 
@@ -112,7 +115,7 @@ string zki = invoice.ZKI(certificate);
 If you encounter issues with SSL certificate validation, you can disable certificate checks as follows:
 
 ```csharp
-Fiscalization.SslCertificateAuthentication = new()
+ReferenceTypeExtensions.SslCertificateAuthentication = new()
 {
     CertificateValidationMode = X509CertificateValidationMode.None,
     RevocationMode = X509RevocationMode.NoCheck
