@@ -7,21 +7,26 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <!-- NuGet Metadata -->
     <PackageId>MAES.Fiskal</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>Roko Tomović</Authors>
     <Company>MAES</Company>
-    <Description>Omogućuje fiskalizacij računa i geneeriranje ZKI u c# .NET za Republiku Hrvatsku. Github: https://github.com/MAES-Software/MAES.Fiskal</Description>
+    <Description>This is a wrapper for invoice fiscalization in Republic of Croatia using C# and .NET 8+</Description>
     <PackageProjectUrl>https://github.com/MAES-Software/MAES.Fiskal</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MAES-Software/MAES.Fiskal</RepositoryUrl>
     <PackageTags>Fiskalizacija;Fiscalization;Fiskal;</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.ServiceModel.Duplex" Version="6.0.0" />
     <PackageReference Include="System.ServiceModel.Http" Version="6.0.0" />
     <PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" />
+    <None Include="README.md" Pack="true" PackagePath="\"/>
+    <None Include="LICENSE.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
