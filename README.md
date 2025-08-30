@@ -4,7 +4,7 @@
 [![Forks](https://img.shields.io/github/forks/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/network/members)
 [![Stars](https://img.shields.io/github/stars/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/stargazers)
 [![Issues](https://img.shields.io/github/issues/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/issues)
-[![License](https://img.shields.io/github/license/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/LICENSE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL_HERE)
 
 **MAES.Fiskal** is a fiscalization tool for invoices developed in **C#** using **.NET 8**. It enables automatic generation and submission of fiscal data according to current regulations.
@@ -24,50 +24,64 @@ or
 git clone https://github.com/MAES-Software/MAES.Fiskal.git
 ```
 
+## Prerequirements
+
+### Load X509Certificate2
+
+1. From file (You can use relative path eg. "./cert.p12")
+    ```csharp
+    var certificate = new X509Certificate2("filename");
+    ```
+2. From some data stream with byte[] bytes
+    ```csharp
+    var certificate = new X509Certificate2(bytes);
+    ```
+
+You must also supply password for given certificate if it has one (by default certificates given from goverment are locked but they can be repackaged)
+```csharp
+var certificate = new X509Certificate2("filename", "password");
+```
+
 ## Usage Example
 
-### Fiscalization of an Invoice
-
+### Define using MAES.Fiskal to get all classes for fiscalization
 ```csharp
 using MAES.Fiskal;
+```
 
-var fiskalization = new Fiskalization();
+### Create an invoice
+```csharp
 var invoice = new RacunType
 {
     // Fill invoice properties here
 };
-
-var result = fiskalization.Fiskaliziraj(invoice);
-
-if (result.IsSuccess)
-{
-    Console.WriteLine("Fiscalization successful!");
-    Console.WriteLine($"JIR: {result.JIR}");
-}
-else
-{
-    Console.WriteLine("Fiscalization failed:");
-    Console.WriteLine(result.ErrorMessage);
-}
 ```
 
-### Using Extensions for RacunType
+### Create an invoiceTipType from invoiceType
+```csharp
+RacunNapojnicaType invoiceTip = invoice.ToInvoiceTipAsnyc(new ()
+{
+    // Fill tip properties here
+});
+```
+
+### Send invoice
+```csharp
+Fiscalization.SendInvoiceAsync(invoice, certificate);
+```
+
+### Send invoiceTip
+```csharp
+Fiscalization.SendInvoiceAsync(invoiceTip, certificate);
+```
+
+### Generate ZKI
 
 ```csharp
-using MAES.Fiskal.Extensions;
-
-var invoice = new RacunType
-{
-    // Fill invoice properties here
-};
-
-// Example: Generate ZKI
 string zki = invoice.ZKI(certificate);
-
-// Example: Get total amount
-decimal total = invoice.GetTotalAmount();
-Console.WriteLine($"Total amount: {total}");
 ```
+
+> Both invoice and invoiceTip have .ZKI(certificate) methods
 
 ### Disabling SSL Certificate Validation (Not Recommended)
 
