@@ -9,6 +9,10 @@
 
 **MAES.Fiskal** is a fiscalization tool for invoices developed in **C#** using **.NET 8**. It enables automatic generation and submission of fiscal data according to current regulations.
 
+## Reequirements
+1. .NET 8+
+2. Fiscalization WSDL ver. 2.6
+
 ## Features
 - ZKI Generation
 - Invoice fiscalization
@@ -24,10 +28,17 @@ or
 git clone https://github.com/MAES-Software/MAES.Fiskal.git
 ```
 
-## Prerequirements
+### Define endpoint address (Url)
+1.  Demo endpoint
+    ```csharp
+    string url = "https://cistest.apis-it.hr:8449/FiskalizacijaServiceTest";
+    ```
+2.  Poduction endpoint
+    ```csharp
+    string url = "https://cis.porezna-uprava.hr:8449/FiskalizacijaService";
+    ```
 
 ### Load X509Certificate2
-
 1. From file (You can use relative path eg. "./cert.p12")
     ```csharp
     var certificate = new X509Certificate2("filename");
@@ -83,10 +94,10 @@ using MAES.Fiskal;
     ```csharp
     // Call to service
     var res = await invoice.SendAsync(certificate, url);
-    
+
     // Check if there are errors
     if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
-    
+
     // Get jir to store
     string jir = res.Jir;
     ```
