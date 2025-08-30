@@ -5,7 +5,6 @@ using System.Text;
 
 namespace MAES.Fiskal;
 
-
 /// <summary>
 /// This is a static class that adds RacunType helper methods.
 /// </summary>

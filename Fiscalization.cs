@@ -7,10 +7,12 @@ using System.ServiceModel.Security;
 
 namespace MAES.Fiskal;
 
+#pragma warning disable IDE1006
+
 /// <summary>
 /// This is main class for fiscalization
 /// </summary>
-public static class Fiskalizacija
+public static class Fiscalization
 {
     static ZaglavljeType newZaglavlje => new()
     {
@@ -43,11 +45,11 @@ public static class Fiskalizacija
 
         client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication = SslCertificateAuthentification;
         // TODO: zapali! -------------------------------------------------------------------------------------------------------
-        // client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication = new()
-        // {
-        //     CertificateValidationMode = X509CertificateValidationMode.None,
-        //     RevocationMode = X509RevocationMode.NoCheck
-        // };
+        client.ClientCredentials.ServiceCertificate.SslCertificateAuthentication = new()
+        {
+            CertificateValidationMode = X509CertificateValidationMode.None,
+            RevocationMode = X509RevocationMode.NoCheck
+        };
         // ----------------------------------------------------------------------------------------------------------------------
 
         var res = await client.racuniAsync(request) ?? new();

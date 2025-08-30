@@ -7,23 +7,81 @@
 [![License](https://img.shields.io/github/license/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/blob/main/LICENSE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL_HERE)
 
-**MAES.Fiskal** je alat za fiskalizaciju računa razvijen u **C#** koristeći **.NET 8**. Omogućuje automatsko generiranje i slanje fiskalnih podataka prema važećim propisima.
+**MAES.Fiskal** is a fiscalization tool for invoices developed in **C#** using **.NET 8**. It enables automatic generation and submission of fiscal data according to current regulations.
 
-## Značajke
-- Fiskalizacija računa
-- Fiskalizacija napojnica
-- Besplatan i otvorenog koda
+## Features
+- ZKI Generation
+- Invoice fiscalization
+- Tip fiscalization
+- Free and open source
 
-## Instalacija
-**Nuget** https://www.nuget.org/packages/MAES.Fiskal
+## Installation
+**Nuget:** https://www.nuget.org/packages/MAES.Fiskal
 
-ili
+or
 
-git clone https://github.com/MAES-Sofware/MAES.Fiskal.git
+```bash
+git clone https://github.com/MAES-Software/MAES.Fiskal.git
+```
 
-## Primjer korištenja
+## Usage Example
 
-TODO: Napravit primjer korištenja
+### Fiscalization of an Invoice
 
-## Licenca
-Ovaj projekt je besplatan i otvorenog koda. Slobodno ga koristite i prilagođavajte za vlastite potrebe.
+```csharp
+using MAES.Fiskal;
+
+var fiskalization = new Fiskalization();
+var invoice = new RacunType
+{
+    // Fill invoice properties here
+};
+
+var result = fiskalization.Fiskaliziraj(invoice);
+
+if (result.IsSuccess)
+{
+    Console.WriteLine("Fiscalization successful!");
+    Console.WriteLine($"JIR: {result.JIR}");
+}
+else
+{
+    Console.WriteLine("Fiscalization failed:");
+    Console.WriteLine(result.ErrorMessage);
+}
+```
+
+### Using Extensions for RacunType
+
+```csharp
+using MAES.Fiskal.Extensions;
+
+var invoice = new RacunType
+{
+    // Fill invoice properties here
+};
+
+// Example: Generate ZKI
+string zki = invoice.ZKI(certificate);
+
+// Example: Get total amount
+decimal total = invoice.GetTotalAmount();
+Console.WriteLine($"Total amount: {total}");
+```
+
+### Disabling SSL Certificate Validation (Not Recommended)
+
+If you encounter issues with SSL certificate validation, you can disable certificate checks as follows:
+
+```csharp
+Fiscalization.SslCertificateAuthentication = new()
+{
+    CertificateValidationMode = X509CertificateValidationMode.None,
+    RevocationMode = X509RevocationMode.NoCheck
+};
+```
+
+> **Warning:** Disabling SSL certificate validation is **not recommended** for production environments, as it reduces security and exposes your application to potential risks. Use this option only for testing or troubleshooting purposes.
+
+## License
+This project is free and open source. Feel free to use and adapt it for your own needs.
