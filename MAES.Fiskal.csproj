@@ -10,10 +10,10 @@
     <Version>1.0.1</Version>
     <Authors>Roko Tomović</Authors>
     <Company>MAES</Company>
-    <Description>Mogućnost fiskalizacije računa u c#.</Description>
+    <Description>Omogućuje fiskalizacij računa i geneeriranje ZKI u c# .NET za Republiku Hrvatsku. Github: https://github.com/MAES-Software/MAES.Fiskal</Description>
     <PackageProjectUrl>https://github.com/MAES-Software/MAES.Fiskal</PackageProjectUrl>
     <RepositoryUrl>https://github.com/MAES-Software/MAES.Fiskal</RepositoryUrl>
-    <PackageTags>Fiskalizacija;Fiscalization</PackageTags>
+    <PackageTags>Fiskalizacija;Fiscalization;Fiskal;</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
