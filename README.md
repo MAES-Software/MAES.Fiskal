@@ -53,7 +53,27 @@ using MAES.Fiskal;
 ```csharp
 var invoice = new RacunType
 {
-    // Fill invoice properties here
+	BrRac = new BrojRacunaType
+	{
+		BrOznRac = "1", // Invoice number (incremental for each receipt)
+		OznPosPr = "POSL_1", // Workspace code
+		OznNapUr = "1" // Cash reegister number
+	},
+	DatVrijeme = DateTime.Now.ToString("dd.MM.yyyyTHH:mm:ss"), // DateTime of invoice
+	IznosUkupno = "12.50", // Total amount (must be format 0.00)
+	NakDost = false,
+	Oib = "51560545524", // Identification number of company
+	OibOper = Korisnik.OIB, // Odentitfication numer of person operating POS
+	OznSlijed = OznakaSlijednostiType.N,
+    Pdv = [ // Taxes list
+        new ()
+        {
+            Stopa = "25.00", // Tax percentage (must be format 0.00)
+            Osnovica = "10.00", // Tax base (must be format 0.00)
+            Iznos = "2.50" // Tax amount (must be format 0.00)
+        }
+    ],
+    USustPdv = blagajna.SustavPDV // Does company falls under tax obligation laws
 };
 ```
 
@@ -67,13 +87,17 @@ RacunNapojnicaType invoiceTip = invoice.ToInvoiceTipAsnyc(new ()
 
 ### Send invoice
 ```csharp
-Fiscalization.SendInvoiceAsync(invoice, certificate);
+// Call to service
+var res = await invoice.SendAsync(certificate, url);
+
+// Check if there are errors
+if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
+
+// Get jir to store
+string jir = res.Jir;
 ```
 
-### Send invoiceTip
-```csharp
-Fiscalization.SendInvoiceAsync(invoiceTip, certificate);
-```
+> Both invoice and invoiceTip have .SendAsync(certificate, url) method
 
 ### Generate ZKI
 
