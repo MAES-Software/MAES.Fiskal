@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+    <!-- <TargetFramework>netstandard2.0</TargetFramework> -->
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>MAES.Fiskal</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <Authors>Roko Tomović</Authors>
     <Company>MAES</Company>
     <Description>Omogućuje fiskalizacij računa i geneeriranje ZKI u c# .NET za Republiku Hrvatsku. Github: https://github.com/MAES-Software/MAES.Fiskal</Description>
