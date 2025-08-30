@@ -100,14 +100,19 @@ if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
 string jir = res.Jir;
 ```
 
-> Both invoice and invoiceTip have .SendAsync(certificate, url) method
+### Send invoice tip
+```csharp
+// Call to service
+var res = await invoiceTip.SendAsync(certificate, url);
+
+// Check if there are errors
+if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
+```
 
 ### Generate ZKI
-
 ```csharp
 string zki = invoice.ZKI(certificate);
 ```
-
 > Both invoice and invoiceTip have .ZKI(certificate) methods
 
 ### Disabling SSL Certificate Validation (Not Recommended)
