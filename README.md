@@ -49,65 +49,66 @@ var certificate = new X509Certificate2("filename", "password");
 using MAES.Fiskal;
 ```
 
-### Create an invoice
-```csharp
-var invoice = new RacunType
-{
-	BrRac = new BrojRacunaType
-	{
-		BrOznRac = "1", // Invoice number (incremental for each receipt)
-		OznPosPr = "POSL_1", // Workspace code
-		OznNapUr = "1" // Cash reegister number
-	},
-	DatVrijeme = DateTime.Now.ToString("dd.MM.yyyyTHH:mm:ss"), // DateTime of invoice
-	IznosUkupno = "12.50", // Total amount (must be format 0.00)
-	NakDost = false,
-	Oib = "51560545524", // Identification number of company
-	OibOper = "51560545524", // Odentitfication numer of person operating POS
-	OznSlijed = OznakaSlijednostiType.N,
-    Pdv = [ // Taxes list
-        new ()
-        {
-            Stopa = "25.00", // Tax percentage (must be format 0.00)
-            Osnovica = "10.00", // Tax base (must be format 0.00)
-            Iznos = "2.50" // Tax amount (must be format 0.00)
-        }
-    ],
-    Pnp = [], // Fill tax on spending if nececary :S
-    USustPdv = true, // Does company falls under tax obligation laws
-    NacPlac = NacinPlacanjaType.G // Type of payment (G - Cash, K - Cards, etc...)
-};
-```
+### Sending invoice
+1.  Create invoice
+    ```csharp
+    var invoice = new RacunType
+    {
+    	BrRac = new BrojRacunaType
+    	{
+    		BrOznRac = "1", // Invoice number (incremental for each receipt)
+    		OznPosPr = "POSL_1", // Workspace code
+    		OznNapUr = "1" // Cash reegister number
+    	},
+    	DatVrijeme = DateTime.Now.ToString("dd.MM.yyyyTHH:mm:ss"), // DateTime of invoice
+    	IznosUkupno = "12.50", // Total amount (must be format 0.00)
+    	NakDost = false,
+    	Oib = "51560545524", // Identification number of company
+    	OibOper = "51560545524", // Odentitfication numer of person operating POS
+    	OznSlijed = OznakaSlijednostiType.N,
+        Pdv = [ // Taxes list
+            new ()
+            {
+                Stopa = "25.00", // Tax percentage (must be format 0.00)
+                Osnovica = "10.00", // Tax base (must be format 0.00)
+                Iznos = "2.50" // Tax amount (must be format 0.00)
+            }
+        ],
+        Pnp = [], // Fill tax on spending if nececary :S
+        USustPdv = true, // Does company falls under tax obligation laws
+        NacPlac = NacinPlacanjaType.G // Type of payment (G - Cash, K - Cards, etc...)
+    };
+    ```
+2.  Send invoice
+    ```csharp
+    // Call to service
+    var res = await invoice.SendAsync(certificate, url);
+    
+    // Check if there are errors
+    if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
+    
+    // Get jir to store
+    string jir = res.Jir;
+    ```
 
-### Send invoice
-```csharp
-// Call to service
-var res = await invoice.SendAsync(certificate, url);
+### Sending invoice tip
+1.  Create RacunNapojnicaType from RacunType with NapojnicaTypee as parameter
+    ```csharp
+    RacunNapojnicaType invoiceTip = invoice.ToInvoiceTipAsnyc(new ()
+    {
+        iznosNapojnice = "1.00", // Tip amount
+        nacinPlacanjaNapojnice = NacinPlacanjaType.G // Tip type of payment (G - Cash, K - Cards, etc...)
+    });
+    ```
 
-// Check if there are errors
-if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
+2.  Send RacunNapojnicaType
+    ```csharp
+    // Call to service
+    var res = await invoiceTip.SendAsync(certificate, url);
 
-// Get jir to store
-string jir = res.Jir;
-```
-
-### Create an invoiceTipType from invoiceType
-```csharp
-RacunNapojnicaType invoiceTip = invoice.ToInvoiceTipAsnyc(new ()
-{
-    iznosNapojnice = "1.00", // Tip amount
-    nacinPlacanjaNapojnice = acinPlacanjaType.G // Tip type of payment (G - Cash, K - Cards, etc...)
-});
-```
-
-### Send invoice tip
-```csharp
-// Call to service
-var res = await invoiceTip.SendAsync(certificate, url);
-
-// Check if there are errors
-if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
-```
+    // Check if there are errors
+    if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
+    ```
 
 ### Generate ZKI
 ```csharp
