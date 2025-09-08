@@ -10,7 +10,7 @@
 
     <!-- NuGet Metadata -->
     <PackageId>MAES.Fiskal</PackageId>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
     <Authors>Roko Tomović</Authors>
     <Company>MAES</Company>
     <Description>This is a wrapper for invoice fiscalization in Republic of Croatia using C# and .NET 8+</Description>

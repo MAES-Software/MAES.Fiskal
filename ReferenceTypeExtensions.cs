@@ -20,7 +20,15 @@ public static class ReferenceTypeExtensions
         IdPoruke = Guid.NewGuid().ToString()
     };
 
-    static readonly X509ServiceCertificateAuthentication SslCertificateAuthentification = new();
+    /// <summary>
+    /// Authentification Method. To turn off (not recommended):
+    /// new()
+    /// {
+    ///     CertificateValidationMode = X509CertificateValidationMode.None,
+    ///     RevocationMode = X509RevocationMode.NoCheck
+    /// }
+    /// </summary>
+    public static X509ServiceCertificateAuthentication SslCertificateAuthentification = new();
 
     /// <summary>
     /// This method signs and sends invoice to specified url
