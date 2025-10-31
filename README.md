@@ -9,7 +9,7 @@
 
 **MAES.Fiskal** is a fiscalization tool for invoices developed in **C#** using **.NET 8**. It enables automatic generation and submission of fiscal data according to current regulations.
 
-## Reequirements
+## Requirements
 1. .NET 8+
 2. Fiscalization WSDL ver. 2.6
 
