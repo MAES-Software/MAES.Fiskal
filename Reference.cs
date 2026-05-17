@@ -11,7 +11,7 @@ namespace MAES.Fiskal
 {
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.apis-it.hr/fin/2012/services/FiskalizacijaService", ConfigurationName="MAES.Fiskal.FiskalizacijaPortType")]
     public interface FiskalizacijaPortType
     {
@@ -20,16 +20,6 @@ namespace MAES.Fiskal
             "ce/racuni", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<MAES.Fiskal.racuniResponse> racuniAsync(MAES.Fiskal.racuniRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
-            "ce/prateciDokumenti", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<MAES.Fiskal.prateciDokumentiResponse> prateciDokumentiAsync(MAES.Fiskal.prateciDokumentiRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
-            "ce/racuniPD", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<MAES.Fiskal.racuniPDResponse> racuniPDAsync(MAES.Fiskal.racuniPDRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
             "ce/promijeniNacPlac", ReplyAction="*")]
@@ -42,13 +32,38 @@ namespace MAES.Fiskal
         System.Threading.Tasks.Task<MAES.Fiskal.napojnicaResponse> napojnicaAsync(MAES.Fiskal.napojnicaRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
+            "ce/promijeniPodatkeRacuna", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<MAES.Fiskal.promijeniPodatkeRacunaResponse> promijeniPodatkeRacunaAsync(MAES.Fiskal.promijeniPodatkeRacunaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
+            "ce/promijeniPodatkeRacuna", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<MAES.Fiskal.prijaviRadnoVrijemeResponse> prijaviRadnoVrijemeAsync(MAES.Fiskal.prijaviRadnoVrijemeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
+            "ce/obrisiRadnoVrijeme", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<MAES.Fiskal.obrisiRadnoVrijemeResponse> obrisiRadnoVrijemeAsync(MAES.Fiskal.obrisiRadnoVrijemeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
+            "ce/dohvatiRadnoVrijeme", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<MAES.Fiskal.dohvatiRadnoVrijemeResponse> dohvatiRadnoVrijemeAsync(MAES.Fiskal.dohvatiRadnoVrijemeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
+            "ce/prijaviRadnoVrijemeZaPoslovnice", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Threading.Tasks.Task<MAES.Fiskal.prijaviRadnoVrijemeZaPoslovniceResponse> prijaviRadnoVrijemeZaPoslovniceAsync(MAES.Fiskal.prijaviRadnoVrijemeZaPoslovniceRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://e-porezna.porezna-uprava.hr/fiskalizacija/2012/services/FiskalizacijaServi" +
             "ce/echo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<MAES.Fiskal.echoResponse> echoAsync(MAES.Fiskal.echoRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class RacunZahtjev
@@ -120,7 +135,7 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class ZaglavljeType
@@ -160,7 +175,1530 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PoslovniProstoriOdgovorType
+    {
+        
+        private PoslovnicaOdgovorType[] poslovnicaOdgovorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PoslovnicaOdgovor", Order=0)]
+        public PoslovnicaOdgovorType[] PoslovnicaOdgovor
+        {
+            get
+            {
+                return this.poslovnicaOdgovorField;
+            }
+            set
+            {
+                this.poslovnicaOdgovorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PoslovnicaOdgovorType
+    {
+        
+        private string oznPosPrField;
+        
+        private object itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string OznPosPr
+        {
+            get
+            {
+                return this.oznPosPrField;
+            }
+            set
+            {
+                this.oznPosPrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Greske", typeof(GreskeType), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("PorukaOdgovora", typeof(PorukaOdgovoraType), Order=1)]
+        public object Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class GreskeType
+    {
+        
+        private GreskaType[] greskaField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Greska", Order=0)]
+        public GreskaType[] Greska
+        {
+            get
+            {
+                return this.greskaField;
+            }
+            set
+            {
+                this.greskaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class GreskaType
+    {
+        
+        private string sifraGreskeField;
+        
+        private string porukaGreskeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string SifraGreske
+        {
+            get
+            {
+                return this.sifraGreskeField;
+            }
+            set
+            {
+                this.sifraGreskeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string PorukaGreske
+        {
+            get
+            {
+                return this.porukaGreskeField;
+            }
+            set
+            {
+                this.porukaGreskeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PorukaOdgovoraType
+    {
+        
+        private string sifraPorukeField;
+        
+        private string porukaField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string SifraPoruke
+        {
+            get
+            {
+                return this.sifraPorukeField;
+            }
+            set
+            {
+                this.sifraPorukeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Poruka
+        {
+            get
+            {
+                return this.porukaField;
+            }
+            set
+            {
+                this.porukaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PoslovnicaType
+    {
+        
+        private string oznPosPrField;
+        
+        private object itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string OznPosPr
+        {
+            get
+            {
+                return this.oznPosPrField;
+            }
+            set
+            {
+                this.oznPosPrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Iznimka", typeof(IznimkeType), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("Redovno", typeof(RedovnoType), Order=1)]
+        public object Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class IznimkeType
+    {
+        
+        private string datumField;
+        
+        private object[] itemsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Datum
+        {
+            get
+            {
+                return this.datumField;
+            }
+            set
+            {
+                this.datumField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Dvokratno", typeof(DvokratnoIznimkeType), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("Jednokratno", typeof(JednokratnoIznimkeType), Order=1)]
+        public object[] Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class DvokratnoIznimkeType
+    {
+        
+        private DioDvokratnogType dioDvokratnogField;
+        
+        private string radnoVrijemeOdField;
+        
+        private string radnoVrijemeDoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public DioDvokratnogType DioDvokratnog
+        {
+            get
+            {
+                return this.dioDvokratnogField;
+            }
+            set
+            {
+                this.dioDvokratnogField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string RadnoVrijemeOd
+        {
+            get
+            {
+                return this.radnoVrijemeOdField;
+            }
+            set
+            {
+                this.radnoVrijemeOdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RadnoVrijemeDo
+        {
+            get
+            {
+                return this.radnoVrijemeDoField;
+            }
+            set
+            {
+                this.radnoVrijemeDoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public enum DioDvokratnogType
+    {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("1")]
+        Item1,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("2")]
+        Item2,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class JednokratnoIznimkeType
+    {
+        
+        private string radnoVrijemeOdField;
+        
+        private string radnoVrijemeDoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string RadnoVrijemeOd
+        {
+            get
+            {
+                return this.radnoVrijemeOdField;
+            }
+            set
+            {
+                this.radnoVrijemeOdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string RadnoVrijemeDo
+        {
+            get
+            {
+                return this.radnoVrijemeDoField;
+            }
+            set
+            {
+                this.radnoVrijemeDoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class RedovnoType
+    {
+        
+        private string datumOdField;
+        
+        private string datumDoField;
+        
+        private string napomenaField;
+        
+        private object[] itemsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DatumOd
+        {
+            get
+            {
+                return this.datumOdField;
+            }
+            set
+            {
+                this.datumOdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DatumDo
+        {
+            get
+            {
+                return this.datumDoField;
+            }
+            set
+            {
+                this.datumDoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Napomena
+        {
+            get
+            {
+                return this.napomenaField;
+            }
+            set
+            {
+                this.napomenaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Dvokratno", typeof(DvokratnoType), Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("Jednokratno", typeof(JednokratnoType), Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("ParniNeparni", typeof(ParniNeparniType), Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("PoDogovoru", typeof(PoDogovoruType), Order=3)]
+        public object[] Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class DvokratnoType
+    {
+        
+        private DanUTjednuType danUTjednuField;
+        
+        private DioDvokratnogType dioDvokratnogField;
+        
+        private string radnoVrijemeOdField;
+        
+        private string radnoVrijemeDoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public DanUTjednuType DanUTjednu
+        {
+            get
+            {
+                return this.danUTjednuField;
+            }
+            set
+            {
+                this.danUTjednuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public DioDvokratnogType DioDvokratnog
+        {
+            get
+            {
+                return this.dioDvokratnogField;
+            }
+            set
+            {
+                this.dioDvokratnogField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RadnoVrijemeOd
+        {
+            get
+            {
+                return this.radnoVrijemeOdField;
+            }
+            set
+            {
+                this.radnoVrijemeOdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string RadnoVrijemeDo
+        {
+            get
+            {
+                return this.radnoVrijemeDoField;
+            }
+            set
+            {
+                this.radnoVrijemeDoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public enum DanUTjednuType
+    {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("1")]
+        Item1,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("2")]
+        Item2,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("3")]
+        Item3,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("4")]
+        Item4,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("5")]
+        Item5,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("6")]
+        Item6,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("7")]
+        Item7,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("8")]
+        Item8,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class JednokratnoType
+    {
+        
+        private DanUTjednuType danUTjednuField;
+        
+        private string radnoVrijemeOdField;
+        
+        private string radnoVrijemeDoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public DanUTjednuType DanUTjednu
+        {
+            get
+            {
+                return this.danUTjednuField;
+            }
+            set
+            {
+                this.danUTjednuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string RadnoVrijemeOd
+        {
+            get
+            {
+                return this.radnoVrijemeOdField;
+            }
+            set
+            {
+                this.radnoVrijemeOdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RadnoVrijemeDo
+        {
+            get
+            {
+                return this.radnoVrijemeDoField;
+            }
+            set
+            {
+                this.radnoVrijemeDoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class ParniNeparniType
+    {
+        
+        private DanUTjednuType danUTjednuField;
+        
+        private ParNeparType parNeparField;
+        
+        private string radnoVrijemeOdField;
+        
+        private string radnoVrijemeDoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public DanUTjednuType DanUTjednu
+        {
+            get
+            {
+                return this.danUTjednuField;
+            }
+            set
+            {
+                this.danUTjednuField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public ParNeparType ParNepar
+        {
+            get
+            {
+                return this.parNeparField;
+            }
+            set
+            {
+                this.parNeparField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string RadnoVrijemeOd
+        {
+            get
+            {
+                return this.radnoVrijemeOdField;
+            }
+            set
+            {
+                this.radnoVrijemeOdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string RadnoVrijemeDo
+        {
+            get
+            {
+                return this.radnoVrijemeDoField;
+            }
+            set
+            {
+                this.radnoVrijemeDoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public enum ParNeparType
+    {
+        
+        /// <remarks/>
+        P,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PoDogovoruType
+    {
+        
+        private string redovnoPoDogovoruField;
+        
+        public PoDogovoruType()
+        {
+            this.redovnoPoDogovoruField = "DA";
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string RedovnoPoDogovoru
+        {
+            get
+            {
+                return this.redovnoPoDogovoruField;
+            }
+            set
+            {
+                this.redovnoPoDogovoruField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class RadnoVrijemeBrisanjeType
+    {
+        
+        private RadnoVrijemeBrisanjeTypeRedovno[] redovnoField;
+        
+        private RadnoVrijemeBrisanjeTypeIznimke[] iznimkeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Redovno", Order=0)]
+        public RadnoVrijemeBrisanjeTypeRedovno[] Redovno
+        {
+            get
+            {
+                return this.redovnoField;
+            }
+            set
+            {
+                this.redovnoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Iznimke", Order=1)]
+        public RadnoVrijemeBrisanjeTypeIznimke[] Iznimke
+        {
+            get
+            {
+                return this.iznimkeField;
+            }
+            set
+            {
+                this.iznimkeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class RadnoVrijemeBrisanjeTypeRedovno
+    {
+        
+        private string datumOdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DatumOd
+        {
+            get
+            {
+                return this.datumOdField;
+            }
+            set
+            {
+                this.datumOdField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class RadnoVrijemeBrisanjeTypeIznimke
+    {
+        
+        private string datumField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Datum
+        {
+            get
+            {
+                return this.datumField;
+            }
+            set
+            {
+                this.datumField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class RadnoVrijemeType
+    {
+        
+        private RedovnoType[] redovnoField;
+        
+        private IznimkeType[] iznimkeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Redovno", Order=0)]
+        public RedovnoType[] Redovno
+        {
+            get
+            {
+                return this.redovnoField;
+            }
+            set
+            {
+                this.redovnoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Iznimke", Order=1)]
+        public IznimkeType[] Iznimke
+        {
+            get
+            {
+                return this.iznimkeField;
+            }
+            set
+            {
+                this.iznimkeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PoslovniProstorType
+    {
+        
+        private string oibField;
+        
+        private string oznPosPrField;
+        
+        private object itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Oib
+        {
+            get
+            {
+                return this.oibField;
+            }
+            set
+            {
+                this.oibField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string OznPosPr
+        {
+            get
+            {
+                return this.oznPosPrField;
+            }
+            set
+            {
+                this.oznPosPrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BrisanjeRadnogVremena", typeof(RadnoVrijemeBrisanjeType), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("RadnoVrijeme", typeof(RadnoVrijemeType), Order=2)]
+        public object Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class RacunPPType
+    {
+        
+        private string oibField;
+        
+        private bool uSustPdvField;
+        
+        private string datVrijemeField;
+        
+        private OznakaSlijednostiType oznSlijedField;
+        
+        private BrojRacunaType brRacField;
+        
+        private PorezType[] pdvField;
+        
+        private PorezType[] pnpField;
+        
+        private PorezOstaloType[] ostaliPorField;
+        
+        private string iznosOslobPdvField;
+        
+        private string iznosMarzaField;
+        
+        private string iznosNePodlOporField;
+        
+        private NaknadaType[] naknadeField;
+        
+        private string iznosUkupnoField;
+        
+        private NacinPlacanjaType nacinPlacField;
+        
+        private string oibOperField;
+        
+        private string zastKodField;
+        
+        private bool nakDostField;
+        
+        private string paragonBrRacField;
+        
+        private string specNamjField;
+        
+        private string oibPrimateljaRacunaField;
+        
+        private NacinPlacanjaType promijenjeniNacinPlacField;
+        
+        private string promijenjeniOibPrimateljaRacunaField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Oib
+        {
+            get
+            {
+                return this.oibField;
+            }
+            set
+            {
+                this.oibField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public bool USustPdv
+        {
+            get
+            {
+                return this.uSustPdvField;
+            }
+            set
+            {
+                this.uSustPdvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string DatVrijeme
+        {
+            get
+            {
+                return this.datVrijemeField;
+            }
+            set
+            {
+                this.datVrijemeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public OznakaSlijednostiType OznSlijed
+        {
+            get
+            {
+                return this.oznSlijedField;
+            }
+            set
+            {
+                this.oznSlijedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public BrojRacunaType BrRac
+        {
+            get
+            {
+                return this.brRacField;
+            }
+            set
+            {
+                this.brRacField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Porez", IsNullable=false)]
+        public PorezType[] Pdv
+        {
+            get
+            {
+                return this.pdvField;
+            }
+            set
+            {
+                this.pdvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Porez", IsNullable=false)]
+        public PorezType[] Pnp
+        {
+            get
+            {
+                return this.pnpField;
+            }
+            set
+            {
+                this.pnpField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Porez", IsNullable=false)]
+        public PorezOstaloType[] OstaliPor
+        {
+            get
+            {
+                return this.ostaliPorField;
+            }
+            set
+            {
+                this.ostaliPorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string IznosOslobPdv
+        {
+            get
+            {
+                return this.iznosOslobPdvField;
+            }
+            set
+            {
+                this.iznosOslobPdvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public string IznosMarza
+        {
+            get
+            {
+                return this.iznosMarzaField;
+            }
+            set
+            {
+                this.iznosMarzaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string IznosNePodlOpor
+        {
+            get
+            {
+                return this.iznosNePodlOporField;
+            }
+            set
+            {
+                this.iznosNePodlOporField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Naknada", IsNullable=false)]
+        public NaknadaType[] Naknade
+        {
+            get
+            {
+                return this.naknadeField;
+            }
+            set
+            {
+                this.naknadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public string IznosUkupno
+        {
+            get
+            {
+                return this.iznosUkupnoField;
+            }
+            set
+            {
+                this.iznosUkupnoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public NacinPlacanjaType NacinPlac
+        {
+            get
+            {
+                return this.nacinPlacField;
+            }
+            set
+            {
+                this.nacinPlacField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public string OibOper
+        {
+            get
+            {
+                return this.oibOperField;
+            }
+            set
+            {
+                this.oibOperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string ZastKod
+        {
+            get
+            {
+                return this.zastKodField;
+            }
+            set
+            {
+                this.zastKodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public bool NakDost
+        {
+            get
+            {
+                return this.nakDostField;
+            }
+            set
+            {
+                this.nakDostField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        public string ParagonBrRac
+        {
+            get
+            {
+                return this.paragonBrRacField;
+            }
+            set
+            {
+                this.paragonBrRacField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        public string SpecNamj
+        {
+            get
+            {
+                return this.specNamjField;
+            }
+            set
+            {
+                this.specNamjField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        public string OibPrimateljaRacuna
+        {
+            get
+            {
+                return this.oibPrimateljaRacunaField;
+            }
+            set
+            {
+                this.oibPrimateljaRacunaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        public NacinPlacanjaType PromijenjeniNacinPlac
+        {
+            get
+            {
+                return this.promijenjeniNacinPlacField;
+            }
+            set
+            {
+                this.promijenjeniNacinPlacField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        public string PromijenjeniOibPrimateljaRacuna
+        {
+            get
+            {
+                return this.promijenjeniOibPrimateljaRacunaField;
+            }
+            set
+            {
+                this.promijenjeniOibPrimateljaRacunaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public enum OznakaSlijednostiType
+    {
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        P,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class BrojRacunaType
+    {
+        
+        private string brOznRacField;
+        
+        private string oznPosPrField;
+        
+        private string oznNapUrField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string BrOznRac
+        {
+            get
+            {
+                return this.brOznRacField;
+            }
+            set
+            {
+                this.brOznRacField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string OznPosPr
+        {
+            get
+            {
+                return this.oznPosPrField;
+            }
+            set
+            {
+                this.oznPosPrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string OznNapUr
+        {
+            get
+            {
+                return this.oznNapUrField;
+            }
+            set
+            {
+                this.oznNapUrField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PorezType
+    {
+        
+        private string stopaField;
+        
+        private string osnovicaField;
+        
+        private string iznosField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Stopa
+        {
+            get
+            {
+                return this.stopaField;
+            }
+            set
+            {
+                this.stopaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Osnovica
+        {
+            get
+            {
+                return this.osnovicaField;
+            }
+            set
+            {
+                this.osnovicaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Iznos
+        {
+            get
+            {
+                return this.iznosField;
+            }
+            set
+            {
+                this.iznosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PorezOstaloType
+    {
+        
+        private string nazivField;
+        
+        private string stopaField;
+        
+        private string osnovicaField;
+        
+        private string iznosField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string Naziv
+        {
+            get
+            {
+                return this.nazivField;
+            }
+            set
+            {
+                this.nazivField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Stopa
+        {
+            get
+            {
+                return this.stopaField;
+            }
+            set
+            {
+                this.stopaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string Osnovica
+        {
+            get
+            {
+                return this.osnovicaField;
+            }
+            set
+            {
+                this.osnovicaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Iznos
+        {
+            get
+            {
+                return this.iznosField;
+            }
+            set
+            {
+                this.iznosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class NaknadaType
+    {
+        
+        private string nazivNField;
+        
+        private string iznosNField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string NazivN
+        {
+            get
+            {
+                return this.nazivNField;
+            }
+            set
+            {
+                this.nazivNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string IznosN
+        {
+            get
+            {
+                return this.iznosNField;
+            }
+            set
+            {
+                this.iznosNField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public enum NacinPlacanjaType
+    {
+        
+        /// <remarks/>
+        G,
+        
+        /// <remarks/>
+        K,
+        
+        /// <remarks/>
+        T,
+        
+        /// <remarks/>
+        O,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class NapojnicaType
@@ -200,29 +1738,7 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public enum NacinPlacanjaType
-    {
-        
-        /// <remarks/>
-        G,
-        
-        /// <remarks/>
-        K,
-        
-        /// <remarks/>
-        C,
-        
-        /// <remarks/>
-        T,
-        
-        /// <remarks/>
-        O,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class RacunNapojnicaType
@@ -266,7 +1782,7 @@ namespace MAES.Fiskal
         
         private string specNamjField;
         
-        private RacunNapojnicaTypePrateciDokument prateciDokumentField;
+        private string oibPrimateljaRacunaField;
         
         private NapojnicaType napojnicaField;
         
@@ -542,15 +2058,15 @@ namespace MAES.Fiskal
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=19)]
-        public RacunNapojnicaTypePrateciDokument PrateciDokument
+        public string OibPrimateljaRacuna
         {
             get
             {
-                return this.prateciDokumentField;
+                return this.oibPrimateljaRacunaField;
             }
             set
             {
-                this.prateciDokumentField = value;
+                this.oibPrimateljaRacunaField = value;
             }
         }
         
@@ -570,324 +2086,7 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public enum OznakaSlijednostiType
-    {
-        
-        /// <remarks/>
-        N,
-        
-        /// <remarks/>
-        P,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class BrojRacunaType
-    {
-        
-        private string brOznRacField;
-        
-        private string oznPosPrField;
-        
-        private string oznNapUrField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string BrOznRac
-        {
-            get
-            {
-                return this.brOznRacField;
-            }
-            set
-            {
-                this.brOznRacField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string OznPosPr
-        {
-            get
-            {
-                return this.oznPosPrField;
-            }
-            set
-            {
-                this.oznPosPrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string OznNapUr
-        {
-            get
-            {
-                return this.oznNapUrField;
-            }
-            set
-            {
-                this.oznNapUrField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class PorezType
-    {
-        
-        private string stopaField;
-        
-        private string osnovicaField;
-        
-        private string iznosField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Stopa
-        {
-            get
-            {
-                return this.stopaField;
-            }
-            set
-            {
-                this.stopaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Osnovica
-        {
-            get
-            {
-                return this.osnovicaField;
-            }
-            set
-            {
-                this.osnovicaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Iznos
-        {
-            get
-            {
-                return this.iznosField;
-            }
-            set
-            {
-                this.iznosField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class PorezOstaloType
-    {
-        
-        private string nazivField;
-        
-        private string stopaField;
-        
-        private string osnovicaField;
-        
-        private string iznosField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Naziv
-        {
-            get
-            {
-                return this.nazivField;
-            }
-            set
-            {
-                this.nazivField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Stopa
-        {
-            get
-            {
-                return this.stopaField;
-            }
-            set
-            {
-                this.stopaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Osnovica
-        {
-            get
-            {
-                return this.osnovicaField;
-            }
-            set
-            {
-                this.osnovicaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Iznos
-        {
-            get
-            {
-                return this.iznosField;
-            }
-            set
-            {
-                this.iznosField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class NaknadaType
-    {
-        
-        private string nazivNField;
-        
-        private string iznosNField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string NazivN
-        {
-            get
-            {
-                return this.nazivNField;
-            }
-            set
-            {
-                this.nazivNField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string IznosN
-        {
-            get
-            {
-                return this.iznosNField;
-            }
-            set
-            {
-                this.iznosNField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class RacunNapojnicaTypePrateciDokument
-    {
-        
-        private string jirPDField;
-        
-        private string zastKodPDField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string JirPD
-        {
-            get
-            {
-                return this.jirPDField;
-            }
-            set
-            {
-                this.jirPDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string ZastKodPD
-        {
-            get
-            {
-                return this.zastKodPDField;
-            }
-            set
-            {
-                this.zastKodPDField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class PorukaOdgovoraType
-    {
-        
-        private string sifraPorukeField;
-        
-        private string porukaField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string SifraPoruke
-        {
-            get
-            {
-                return this.sifraPorukeField;
-            }
-            set
-            {
-                this.sifraPorukeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Poruka
-        {
-            get
-            {
-                return this.porukaField;
-            }
-            set
-            {
-                this.porukaField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class RacunPNPType
@@ -931,7 +2130,7 @@ namespace MAES.Fiskal
         
         private string specNamjField;
         
-        private RacunPNPTypePrateciDokument prateciDokumentField;
+        private string oibPrimateljaRacunaField;
         
         private NacinPlacanjaType promijenjeniNacinPlacField;
         
@@ -1207,15 +2406,15 @@ namespace MAES.Fiskal
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=19)]
-        public RacunPNPTypePrateciDokument PrateciDokument
+        public string OibPrimateljaRacuna
         {
             get
             {
-                return this.prateciDokumentField;
+                return this.oibPrimateljaRacunaField;
             }
             set
             {
-                this.prateciDokumentField = value;
+                this.oibPrimateljaRacunaField = value;
             }
         }
         
@@ -1235,50 +2434,1195 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class RacunPNPTypePrateciDokument
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class ZaglavljeOdgovorType
     {
         
-        private string jirPDField;
+        private string idPorukeField;
         
-        private string zastKodPDField;
+        private string datumVrijemeField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string JirPD
+        public string IdPoruke
         {
             get
             {
-                return this.jirPDField;
+                return this.idPorukeField;
             }
             set
             {
-                this.jirPDField = value;
+                this.idPorukeField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string ZastKodPD
+        public string DatumVrijeme
         {
             get
             {
-                return this.zastKodPDField;
+                return this.datumVrijemeField;
             }
             set
             {
-                this.zastKodPDField = value;
+                this.datumVrijemeField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class ObjectType
+    {
+        
+        private System.Xml.XmlNode[] anyField;
+        
+        private string idField;
+        
+        private string mimeTypeField;
+        
+        private string encodingField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        public System.Xml.XmlNode[] Any
+        {
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string MimeType
+        {
+            get
+            {
+                return this.mimeTypeField;
+            }
+            set
+            {
+                this.mimeTypeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string Encoding
+        {
+            get
+            {
+                return this.encodingField;
+            }
+            set
+            {
+                this.encodingField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SPKIDataType
+    {
+        
+        private object[] itemsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("SPKISexp", typeof(byte[]), DataType="base64Binary", Order=0)]
+        public object[] Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class PGPDataType
+    {
+        
+        private object[] itemsField;
+        
+        private ItemsChoiceType1[] itemsElementNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        public object[] Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemsChoiceType1[] ItemsElementName
+        {
+            get
+            {
+                return this.itemsElementNameField;
+            }
+            set
+            {
+                this.itemsElementNameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
+    public enum ItemsChoiceType1
+    {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
+        Item,
+        
+        /// <remarks/>
+        PGPKeyID,
+        
+        /// <remarks/>
+        PGPKeyPacket,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class X509IssuerSerialType
+    {
+        
+        private string x509IssuerNameField;
+        
+        private string x509SerialNumberField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string X509IssuerName
+        {
+            get
+            {
+                return this.x509IssuerNameField;
+            }
+            set
+            {
+                this.x509IssuerNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=1)]
+        public string X509SerialNumber
+        {
+            get
+            {
+                return this.x509SerialNumberField;
+            }
+            set
+            {
+                this.x509SerialNumberField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class X509DataType
+    {
+        
+        private object[] itemsField;
+        
+        private ItemsChoiceType[] itemsElementNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", typeof(X509IssuerSerialType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509SKI", typeof(byte[]), DataType="base64Binary", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        public object[] Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemsChoiceType[] ItemsElementName
+        {
+            get
+            {
+                return this.itemsElementNameField;
+            }
+            set
+            {
+                this.itemsElementNameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
+    public enum ItemsChoiceType
+    {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
+        Item,
+        
+        /// <remarks/>
+        X509CRL,
+        
+        /// <remarks/>
+        X509Certificate,
+        
+        /// <remarks/>
+        X509IssuerSerial,
+        
+        /// <remarks/>
+        X509SKI,
+        
+        /// <remarks/>
+        X509SubjectName,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class RetrievalMethodType
+    {
+        
+        private TransformType[] transformsField;
+        
+        private string uRIField;
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
+        public TransformType[] Transforms
+        {
+            get
+            {
+                return this.transformsField;
+            }
+            set
+            {
+                this.transformsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string URI
+        {
+            get
+            {
+                return this.uRIField;
+            }
+            set
+            {
+                this.uRIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string Type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class TransformType
+    {
+        
+        private object[] itemsField;
+        
+        private string[] textField;
+        
+        private string algorithmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order=0)]
+        public object[] Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string[] Text
+        {
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string Algorithm
+        {
+            get
+            {
+                return this.algorithmField;
+            }
+            set
+            {
+                this.algorithmField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class RSAKeyValueType
+    {
+        
+        private byte[] modulusField;
+        
+        private byte[] exponentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=0)]
+        public byte[] Modulus
+        {
+            get
+            {
+                return this.modulusField;
+            }
+            set
+            {
+                this.modulusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=1)]
+        public byte[] Exponent
+        {
+            get
+            {
+                return this.exponentField;
+            }
+            set
+            {
+                this.exponentField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class DSAKeyValueType
+    {
+        
+        private byte[] pField;
+        
+        private byte[] qField;
+        
+        private byte[] gField;
+        
+        private byte[] yField;
+        
+        private byte[] jField;
+        
+        private byte[] seedField;
+        
+        private byte[] pgenCounterField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=0)]
+        public byte[] P
+        {
+            get
+            {
+                return this.pField;
+            }
+            set
+            {
+                this.pField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=1)]
+        public byte[] Q
+        {
+            get
+            {
+                return this.qField;
+            }
+            set
+            {
+                this.qField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=2)]
+        public byte[] G
+        {
+            get
+            {
+                return this.gField;
+            }
+            set
+            {
+                this.gField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=3)]
+        public byte[] Y
+        {
+            get
+            {
+                return this.yField;
+            }
+            set
+            {
+                this.yField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=4)]
+        public byte[] J
+        {
+            get
+            {
+                return this.jField;
+            }
+            set
+            {
+                this.jField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=5)]
+        public byte[] Seed
+        {
+            get
+            {
+                return this.seedField;
+            }
+            set
+            {
+                this.seedField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=6)]
+        public byte[] PgenCounter
+        {
+            get
+            {
+                return this.pgenCounterField;
+            }
+            set
+            {
+                this.pgenCounterField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class KeyValueType
+    {
+        
+        private object itemField;
+        
+        private string[] textField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("RSAKeyValue", typeof(RSAKeyValueType), Order=0)]
+        public object Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string[] Text
+        {
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class KeyInfoType
+    {
+        
+        private object[] itemsField;
+        
+        private ItemsChoiceType2[] itemsElementNameField;
+        
+        private string[] textField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("MgmtData", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("PGPData", typeof(PGPDataType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod", typeof(RetrievalMethodType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("SPKIData", typeof(SPKIDataType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("X509Data", typeof(X509DataType), Order=0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
+        public object[] Items
+        {
+            get
+            {
+                return this.itemsField;
+            }
+            set
+            {
+                this.itemsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemsChoiceType2[] ItemsElementName
+        {
+            get
+            {
+                return this.itemsElementNameField;
+            }
+            set
+            {
+                this.itemsElementNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string[] Text
+        {
+            get
+            {
+                return this.textField;
+            }
+            set
+            {
+                this.textField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
+    public enum ItemsChoiceType2
+    {
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
+        Item,
+        
+        /// <remarks/>
+        KeyName,
+        
+        /// <remarks/>
+        KeyValue,
+        
+        /// <remarks/>
+        MgmtData,
+        
+        /// <remarks/>
+        PGPData,
+        
+        /// <remarks/>
+        RetrievalMethod,
+        
+        /// <remarks/>
+        SPKIData,
+        
+        /// <remarks/>
+        X509Data,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SignatureValueType
+    {
+        
+        private string idField;
+        
+        private byte[] valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
+        public byte[] Value
+        {
+            get
+            {
+                return this.valueField;
+            }
+            set
+            {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class DigestMethodType
+    {
+        
+        private System.Xml.XmlNode[] anyField;
+        
+        private string algorithmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        public System.Xml.XmlNode[] Any
+        {
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string Algorithm
+        {
+            get
+            {
+                return this.algorithmField;
+            }
+            set
+            {
+                this.algorithmField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class ReferenceType
+    {
+        
+        private TransformType[] transformsField;
+        
+        private DigestMethodType digestMethodField;
+        
+        private byte[] digestValueField;
+        
+        private string idField;
+        
+        private string uRIField;
+        
+        private string typeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
+        public TransformType[] Transforms
+        {
+            get
+            {
+                return this.transformsField;
+            }
+            set
+            {
+                this.transformsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public DigestMethodType DigestMethod
+        {
+            get
+            {
+                return this.digestMethodField;
+            }
+            set
+            {
+                this.digestMethodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=2)]
+        public byte[] DigestValue
+        {
+            get
+            {
+                return this.digestValueField;
+            }
+            set
+            {
+                this.digestValueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string URI
+        {
+            get
+            {
+                return this.uRIField;
+            }
+            set
+            {
+                this.uRIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string Type
+        {
+            get
+            {
+                return this.typeField;
+            }
+            set
+            {
+                this.typeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SignatureMethodType
+    {
+        
+        private string hMACOutputLengthField;
+        
+        private System.Xml.XmlNode[] anyField;
+        
+        private string algorithmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
+        public string HMACOutputLength
+        {
+            get
+            {
+                return this.hMACOutputLengthField;
+            }
+            set
+            {
+                this.hMACOutputLengthField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=1)]
+        public System.Xml.XmlNode[] Any
+        {
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string Algorithm
+        {
+            get
+            {
+                return this.algorithmField;
+            }
+            set
+            {
+                this.algorithmField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class CanonicalizationMethodType
+    {
+        
+        private System.Xml.XmlNode[] anyField;
+        
+        private string algorithmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
+        public System.Xml.XmlNode[] Any
+        {
+            get
+            {
+                return this.anyField;
+            }
+            set
+            {
+                this.anyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
+        public string Algorithm
+        {
+            get
+            {
+                return this.algorithmField;
+            }
+            set
+            {
+                this.algorithmField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SignedInfoType
+    {
+        
+        private CanonicalizationMethodType canonicalizationMethodField;
+        
+        private SignatureMethodType signatureMethodField;
+        
+        private ReferenceType[] referenceField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public CanonicalizationMethodType CanonicalizationMethod
+        {
+            get
+            {
+                return this.canonicalizationMethodField;
+            }
+            set
+            {
+                this.canonicalizationMethodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SignatureMethodType SignatureMethod
+        {
+            get
+            {
+                return this.signatureMethodField;
+            }
+            set
+            {
+                this.signatureMethodField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Reference", Order=2)]
+        public ReferenceType[] Reference
+        {
+            get
+            {
+                return this.referenceField;
+            }
+            set
+            {
+                this.referenceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
+    public partial class SignatureType
+    {
+        
+        private SignedInfoType signedInfoField;
+        
+        private SignatureValueType signatureValueField;
+        
+        private KeyInfoType keyInfoField;
+        
+        private ObjectType[] objectField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public SignedInfoType SignedInfo
+        {
+            get
+            {
+                return this.signedInfoField;
+            }
+            set
+            {
+                this.signedInfoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SignatureValueType SignatureValue
+        {
+            get
+            {
+                return this.signatureValueField;
+            }
+            set
+            {
+                this.signatureValueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public KeyInfoType KeyInfo
+        {
+            get
+            {
+                return this.keyInfoField;
+            }
+            set
+            {
+                this.keyInfoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Object", Order=3)]
+        public ObjectType[] Object
+        {
+            get
+            {
+                return this.objectField;
+            }
+            set
+            {
+                this.objectField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class RacunPDType
+    public partial class RacunType
     {
         
         private string oibField;
@@ -1319,7 +3663,7 @@ namespace MAES.Fiskal
         
         private string specNamjField;
         
-        private RacunPDTypePrateciDokument prateciDokumentField;
+        private string oibPrimateljaRacunaField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1593,1778 +3937,21 @@ namespace MAES.Fiskal
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=19)]
-        public RacunPDTypePrateciDokument PrateciDokument
+        public string OibPrimateljaRacuna
         {
             get
             {
-                return this.prateciDokumentField;
+                return this.oibPrimateljaRacunaField;
             }
             set
             {
-                this.prateciDokumentField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class RacunPDTypePrateciDokument
-    {
-        
-        private string[] itemsField;
-        
-        private ItemsChoiceType3[] itemsElementNameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("JirPD", typeof(string), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("ZastKodPD", typeof(string), Order=0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public string[] Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemsChoiceType3[] ItemsElementName
-        {
-            get
-            {
-                return this.itemsElementNameField;
-            }
-            set
-            {
-                this.itemsElementNameField = value;
+                this.oibPrimateljaRacunaField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", IncludeInSchema=false)]
-    public enum ItemsChoiceType3
-    {
-        
-        /// <remarks/>
-        JirPD,
-        
-        /// <remarks/>
-        ZastKodPD,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class BrojPDType
-    {
-        
-        private string brOznPDField;
-        
-        private string oznPosPrField;
-        
-        private string oznNapUrField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string BrOznPD
-        {
-            get
-            {
-                return this.brOznPDField;
-            }
-            set
-            {
-                this.brOznPDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string OznPosPr
-        {
-            get
-            {
-                return this.oznPosPrField;
-            }
-            set
-            {
-                this.oznPosPrField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string OznNapUr
-        {
-            get
-            {
-                return this.oznNapUrField;
-            }
-            set
-            {
-                this.oznNapUrField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class PrateciDokumentType
-    {
-        
-        private string oibField;
-        
-        private string datVrijemeField;
-        
-        private BrojPDType brPratecegDokumentaField;
-        
-        private string iznosUkupnoField;
-        
-        private string zastKodPDField;
-        
-        private bool nakDostField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Oib
-        {
-            get
-            {
-                return this.oibField;
-            }
-            set
-            {
-                this.oibField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string DatVrijeme
-        {
-            get
-            {
-                return this.datVrijemeField;
-            }
-            set
-            {
-                this.datVrijemeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public BrojPDType BrPratecegDokumenta
-        {
-            get
-            {
-                return this.brPratecegDokumentaField;
-            }
-            set
-            {
-                this.brPratecegDokumentaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string IznosUkupno
-        {
-            get
-            {
-                return this.iznosUkupnoField;
-            }
-            set
-            {
-                this.iznosUkupnoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string ZastKodPD
-        {
-            get
-            {
-                return this.zastKodPDField;
-            }
-            set
-            {
-                this.zastKodPDField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public bool NakDost
-        {
-            get
-            {
-                return this.nakDostField;
-            }
-            set
-            {
-                this.nakDostField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class GreskaType
-    {
-        
-        private string sifraGreskeField;
-        
-        private string porukaGreskeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string SifraGreske
-        {
-            get
-            {
-                return this.sifraGreskeField;
-            }
-            set
-            {
-                this.sifraGreskeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string PorukaGreske
-        {
-            get
-            {
-                return this.porukaGreskeField;
-            }
-            set
-            {
-                this.porukaGreskeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class ZaglavljeOdgovorType
-    {
-        
-        private string idPorukeField;
-        
-        private string datumVrijemeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string IdPoruke
-        {
-            get
-            {
-                return this.idPorukeField;
-            }
-            set
-            {
-                this.idPorukeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string DatumVrijeme
-        {
-            get
-            {
-                return this.datumVrijemeField;
-            }
-            set
-            {
-                this.datumVrijemeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class ObjectType
-    {
-        
-        private System.Xml.XmlNode[] anyField;
-        
-        private string idField;
-        
-        private string mimeTypeField;
-        
-        private string encodingField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        public System.Xml.XmlNode[] Any
-        {
-            get
-            {
-                return this.anyField;
-            }
-            set
-            {
-                this.anyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string MimeType
-        {
-            get
-            {
-                return this.mimeTypeField;
-            }
-            set
-            {
-                this.mimeTypeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string Encoding
-        {
-            get
-            {
-                return this.encodingField;
-            }
-            set
-            {
-                this.encodingField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class SPKIDataType
-    {
-        
-        private object[] itemsField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("SPKISexp", typeof(byte[]), DataType="base64Binary", Order=0)]
-        public object[] Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class PGPDataType
-    {
-        
-        private object[] itemsField;
-        
-        private ItemsChoiceType1[] itemsElementNameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("PGPKeyID", typeof(byte[]), DataType="base64Binary", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("PGPKeyPacket", typeof(byte[]), DataType="base64Binary", Order=0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public object[] Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemsChoiceType1[] ItemsElementName
-        {
-            get
-            {
-                return this.itemsElementNameField;
-            }
-            set
-            {
-                this.itemsElementNameField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
-    public enum ItemsChoiceType1
-    {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
-        Item,
-        
-        /// <remarks/>
-        PGPKeyID,
-        
-        /// <remarks/>
-        PGPKeyPacket,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class X509IssuerSerialType
-    {
-        
-        private string x509IssuerNameField;
-        
-        private string x509SerialNumberField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string X509IssuerName
-        {
-            get
-            {
-                return this.x509IssuerNameField;
-            }
-            set
-            {
-                this.x509IssuerNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=1)]
-        public string X509SerialNumber
-        {
-            get
-            {
-                return this.x509SerialNumberField;
-            }
-            set
-            {
-                this.x509SerialNumberField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class X509DataType
-    {
-        
-        private object[] itemsField;
-        
-        private ItemsChoiceType[] itemsElementNameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("X509CRL", typeof(byte[]), DataType="base64Binary", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("X509Certificate", typeof(byte[]), DataType="base64Binary", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("X509IssuerSerial", typeof(X509IssuerSerialType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("X509SKI", typeof(byte[]), DataType="base64Binary", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("X509SubjectName", typeof(string), Order=0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public object[] Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemsChoiceType[] ItemsElementName
-        {
-            get
-            {
-                return this.itemsElementNameField;
-            }
-            set
-            {
-                this.itemsElementNameField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
-    public enum ItemsChoiceType
-    {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
-        Item,
-        
-        /// <remarks/>
-        X509CRL,
-        
-        /// <remarks/>
-        X509Certificate,
-        
-        /// <remarks/>
-        X509IssuerSerial,
-        
-        /// <remarks/>
-        X509SKI,
-        
-        /// <remarks/>
-        X509SubjectName,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class RetrievalMethodType
-    {
-        
-        private TransformType[] transformsField;
-        
-        private string uRIField;
-        
-        private string typeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
-        public TransformType[] Transforms
-        {
-            get
-            {
-                return this.transformsField;
-            }
-            set
-            {
-                this.transformsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string URI
-        {
-            get
-            {
-                return this.uRIField;
-            }
-            set
-            {
-                this.uRIField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string Type
-        {
-            get
-            {
-                return this.typeField;
-            }
-            set
-            {
-                this.typeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class TransformType
-    {
-        
-        private object[] itemsField;
-        
-        private string[] textField;
-        
-        private string algorithmField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order=0)]
-        public object[] Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string[] Text
-        {
-            get
-            {
-                return this.textField;
-            }
-            set
-            {
-                this.textField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string Algorithm
-        {
-            get
-            {
-                return this.algorithmField;
-            }
-            set
-            {
-                this.algorithmField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class RSAKeyValueType
-    {
-        
-        private byte[] modulusField;
-        
-        private byte[] exponentField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=0)]
-        public byte[] Modulus
-        {
-            get
-            {
-                return this.modulusField;
-            }
-            set
-            {
-                this.modulusField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=1)]
-        public byte[] Exponent
-        {
-            get
-            {
-                return this.exponentField;
-            }
-            set
-            {
-                this.exponentField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class DSAKeyValueType
-    {
-        
-        private byte[] pField;
-        
-        private byte[] qField;
-        
-        private byte[] gField;
-        
-        private byte[] yField;
-        
-        private byte[] jField;
-        
-        private byte[] seedField;
-        
-        private byte[] pgenCounterField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=0)]
-        public byte[] P
-        {
-            get
-            {
-                return this.pField;
-            }
-            set
-            {
-                this.pField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=1)]
-        public byte[] Q
-        {
-            get
-            {
-                return this.qField;
-            }
-            set
-            {
-                this.qField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=2)]
-        public byte[] G
-        {
-            get
-            {
-                return this.gField;
-            }
-            set
-            {
-                this.gField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=3)]
-        public byte[] Y
-        {
-            get
-            {
-                return this.yField;
-            }
-            set
-            {
-                this.yField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=4)]
-        public byte[] J
-        {
-            get
-            {
-                return this.jField;
-            }
-            set
-            {
-                this.jField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=5)]
-        public byte[] Seed
-        {
-            get
-            {
-                return this.seedField;
-            }
-            set
-            {
-                this.seedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=6)]
-        public byte[] PgenCounter
-        {
-            get
-            {
-                return this.pgenCounterField;
-            }
-            set
-            {
-                this.pgenCounterField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class KeyValueType
-    {
-        
-        private object itemField;
-        
-        private string[] textField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("DSAKeyValue", typeof(DSAKeyValueType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("RSAKeyValue", typeof(RSAKeyValueType), Order=0)]
-        public object Item
-        {
-            get
-            {
-                return this.itemField;
-            }
-            set
-            {
-                this.itemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string[] Text
-        {
-            get
-            {
-                return this.textField;
-            }
-            set
-            {
-                this.textField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class KeyInfoType
-    {
-        
-        private object[] itemsField;
-        
-        private ItemsChoiceType2[] itemsElementNameField;
-        
-        private string[] textField;
-        
-        private string idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("KeyName", typeof(string), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("KeyValue", typeof(KeyValueType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("MgmtData", typeof(string), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("PGPData", typeof(PGPDataType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("RetrievalMethod", typeof(RetrievalMethodType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("SPKIData", typeof(SPKIDataType), Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("X509Data", typeof(X509DataType), Order=0)]
-        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemsElementName")]
-        public object[] Items
-        {
-            get
-            {
-                return this.itemsField;
-            }
-            set
-            {
-                this.itemsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("ItemsElementName", Order=1)]
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public ItemsChoiceType2[] ItemsElementName
-        {
-            get
-            {
-                return this.itemsElementNameField;
-            }
-            set
-            {
-                this.itemsElementNameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        public string[] Text
-        {
-            get
-            {
-                return this.textField;
-            }
-            set
-            {
-                this.textField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", IncludeInSchema=false)]
-    public enum ItemsChoiceType2
-    {
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("##any:")]
-        Item,
-        
-        /// <remarks/>
-        KeyName,
-        
-        /// <remarks/>
-        KeyValue,
-        
-        /// <remarks/>
-        MgmtData,
-        
-        /// <remarks/>
-        PGPData,
-        
-        /// <remarks/>
-        RetrievalMethod,
-        
-        /// <remarks/>
-        SPKIData,
-        
-        /// <remarks/>
-        X509Data,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class SignatureValueType
-    {
-        
-        private string idField;
-        
-        private byte[] valueField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute(DataType="base64Binary")]
-        public byte[] Value
-        {
-            get
-            {
-                return this.valueField;
-            }
-            set
-            {
-                this.valueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class DigestMethodType
-    {
-        
-        private System.Xml.XmlNode[] anyField;
-        
-        private string algorithmField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        public System.Xml.XmlNode[] Any
-        {
-            get
-            {
-                return this.anyField;
-            }
-            set
-            {
-                this.anyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string Algorithm
-        {
-            get
-            {
-                return this.algorithmField;
-            }
-            set
-            {
-                this.algorithmField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class ReferenceType
-    {
-        
-        private TransformType[] transformsField;
-        
-        private DigestMethodType digestMethodField;
-        
-        private byte[] digestValueField;
-        
-        private string idField;
-        
-        private string uRIField;
-        
-        private string typeField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Transform", IsNullable=false)]
-        public TransformType[] Transforms
-        {
-            get
-            {
-                return this.transformsField;
-            }
-            set
-            {
-                this.transformsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public DigestMethodType DigestMethod
-        {
-            get
-            {
-                return this.digestMethodField;
-            }
-            set
-            {
-                this.digestMethodField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", Order=2)]
-        public byte[] DigestValue
-        {
-            get
-            {
-                return this.digestValueField;
-            }
-            set
-            {
-                this.digestValueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string URI
-        {
-            get
-            {
-                return this.uRIField;
-            }
-            set
-            {
-                this.uRIField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string Type
-        {
-            get
-            {
-                return this.typeField;
-            }
-            set
-            {
-                this.typeField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class SignatureMethodType
-    {
-        
-        private string hMACOutputLengthField;
-        
-        private System.Xml.XmlNode[] anyField;
-        
-        private string algorithmField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="integer", Order=0)]
-        public string HMACOutputLength
-        {
-            get
-            {
-                return this.hMACOutputLengthField;
-            }
-            set
-            {
-                this.hMACOutputLengthField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=1)]
-        public System.Xml.XmlNode[] Any
-        {
-            get
-            {
-                return this.anyField;
-            }
-            set
-            {
-                this.anyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string Algorithm
-        {
-            get
-            {
-                return this.algorithmField;
-            }
-            set
-            {
-                this.algorithmField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class CanonicalizationMethodType
-    {
-        
-        private System.Xml.XmlNode[] anyField;
-        
-        private string algorithmField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlTextAttribute()]
-        [System.Xml.Serialization.XmlAnyElementAttribute(Order=0)]
-        public System.Xml.XmlNode[] Any
-        {
-            get
-            {
-                return this.anyField;
-            }
-            set
-            {
-                this.anyField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="anyURI")]
-        public string Algorithm
-        {
-            get
-            {
-                return this.algorithmField;
-            }
-            set
-            {
-                this.algorithmField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class SignedInfoType
-    {
-        
-        private CanonicalizationMethodType canonicalizationMethodField;
-        
-        private SignatureMethodType signatureMethodField;
-        
-        private ReferenceType[] referenceField;
-        
-        private string idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public CanonicalizationMethodType CanonicalizationMethod
-        {
-            get
-            {
-                return this.canonicalizationMethodField;
-            }
-            set
-            {
-                this.canonicalizationMethodField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public SignatureMethodType SignatureMethod
-        {
-            get
-            {
-                return this.signatureMethodField;
-            }
-            set
-            {
-                this.signatureMethodField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Reference", Order=2)]
-        public ReferenceType[] Reference
-        {
-            get
-            {
-                return this.referenceField;
-            }
-            set
-            {
-                this.referenceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
-    public partial class SignatureType
-    {
-        
-        private SignedInfoType signedInfoField;
-        
-        private SignatureValueType signatureValueField;
-        
-        private KeyInfoType keyInfoField;
-        
-        private ObjectType[] objectField;
-        
-        private string idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public SignedInfoType SignedInfo
-        {
-            get
-            {
-                return this.signedInfoField;
-            }
-            set
-            {
-                this.signedInfoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public SignatureValueType SignatureValue
-        {
-            get
-            {
-                return this.signatureValueField;
-            }
-            set
-            {
-                this.signatureValueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public KeyInfoType KeyInfo
-        {
-            get
-            {
-                return this.keyInfoField;
-            }
-            set
-            {
-                this.keyInfoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Object", Order=3)]
-        public ObjectType[] Object
-        {
-            get
-            {
-                return this.objectField;
-            }
-            set
-            {
-                this.objectField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="ID")]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class RacunType
-    {
-        
-        private string oibField;
-        
-        private bool uSustPdvField;
-        
-        private string datVrijemeField;
-        
-        private OznakaSlijednostiType oznSlijedField;
-        
-        private BrojRacunaType brRacField;
-        
-        private PorezType[] pdvField;
-        
-        private PorezType[] pnpField;
-        
-        private PorezOstaloType[] ostaliPorField;
-        
-        private string iznosOslobPdvField;
-        
-        private string iznosMarzaField;
-        
-        private string iznosNePodlOporField;
-        
-        private NaknadaType[] naknadeField;
-        
-        private string iznosUkupnoField;
-        
-        private NacinPlacanjaType nacinPlacField;
-        
-        private string oibOperField;
-        
-        private string zastKodField;
-        
-        private bool nakDostField;
-        
-        private string paragonBrRacField;
-        
-        private string specNamjField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Oib
-        {
-            get
-            {
-                return this.oibField;
-            }
-            set
-            {
-                this.oibField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public bool USustPdv
-        {
-            get
-            {
-                return this.uSustPdvField;
-            }
-            set
-            {
-                this.uSustPdvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string DatVrijeme
-        {
-            get
-            {
-                return this.datVrijemeField;
-            }
-            set
-            {
-                this.datVrijemeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public OznakaSlijednostiType OznSlijed
-        {
-            get
-            {
-                return this.oznSlijedField;
-            }
-            set
-            {
-                this.oznSlijedField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public BrojRacunaType BrRac
-        {
-            get
-            {
-                return this.brRacField;
-            }
-            set
-            {
-                this.brRacField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=5)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Porez", IsNullable=false)]
-        public PorezType[] Pdv
-        {
-            get
-            {
-                return this.pdvField;
-            }
-            set
-            {
-                this.pdvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=6)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Porez", IsNullable=false)]
-        public PorezType[] Pnp
-        {
-            get
-            {
-                return this.pnpField;
-            }
-            set
-            {
-                this.pnpField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=7)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Porez", IsNullable=false)]
-        public PorezOstaloType[] OstaliPor
-        {
-            get
-            {
-                return this.ostaliPorField;
-            }
-            set
-            {
-                this.ostaliPorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
-        public string IznosOslobPdv
-        {
-            get
-            {
-                return this.iznosOslobPdvField;
-            }
-            set
-            {
-                this.iznosOslobPdvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
-        public string IznosMarza
-        {
-            get
-            {
-                return this.iznosMarzaField;
-            }
-            set
-            {
-                this.iznosMarzaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
-        public string IznosNePodlOpor
-        {
-            get
-            {
-                return this.iznosNePodlOporField;
-            }
-            set
-            {
-                this.iznosNePodlOporField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=11)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Naknada", IsNullable=false)]
-        public NaknadaType[] Naknade
-        {
-            get
-            {
-                return this.naknadeField;
-            }
-            set
-            {
-                this.naknadeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
-        public string IznosUkupno
-        {
-            get
-            {
-                return this.iznosUkupnoField;
-            }
-            set
-            {
-                this.iznosUkupnoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
-        public NacinPlacanjaType NacinPlac
-        {
-            get
-            {
-                return this.nacinPlacField;
-            }
-            set
-            {
-                this.nacinPlacField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
-        public string OibOper
-        {
-            get
-            {
-                return this.oibOperField;
-            }
-            set
-            {
-                this.oibOperField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
-        public string ZastKod
-        {
-            get
-            {
-                return this.zastKodField;
-            }
-            set
-            {
-                this.zastKodField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
-        public bool NakDost
-        {
-            get
-            {
-                return this.nakDostField;
-            }
-            set
-            {
-                this.nakDostField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
-        public string ParagonBrRac
-        {
-            get
-            {
-                return this.paragonBrRacField;
-            }
-            set
-            {
-                this.paragonBrRacField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
-        public string SpecNamj
-        {
-            get
-            {
-                return this.specNamjField;
-            }
-            set
-            {
-                this.specNamjField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class RacunOdgovor
@@ -3453,7 +4040,7 @@ namespace MAES.Fiskal
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class racuniRequest
@@ -3473,7 +4060,7 @@ namespace MAES.Fiskal
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class racuniResponse
@@ -3493,409 +4080,7 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class PrateciDokumentiZahtjev
-    {
-        
-        private ZaglavljeType zaglavljeField;
-        
-        private PrateciDokumentType prateciDokumentField;
-        
-        private SignatureType signatureField;
-        
-        private string idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public ZaglavljeType Zaglavlje
-        {
-            get
-            {
-                return this.zaglavljeField;
-            }
-            set
-            {
-                this.zaglavljeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public PrateciDokumentType PrateciDokument
-        {
-            get
-            {
-                return this.prateciDokumentField;
-            }
-            set
-            {
-                this.prateciDokumentField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=2)]
-        public SignatureType Signature
-        {
-            get
-            {
-                return this.signatureField;
-            }
-            set
-            {
-                this.signatureField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class PrateciDokumentiOdgovor
-    {
-        
-        private ZaglavljeOdgovorType zaglavljeField;
-        
-        private string jirField;
-        
-        private GreskaType[] greskeField;
-        
-        private SignatureType signatureField;
-        
-        private string idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public ZaglavljeOdgovorType Zaglavlje
-        {
-            get
-            {
-                return this.zaglavljeField;
-            }
-            set
-            {
-                this.zaglavljeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Jir
-        {
-            get
-            {
-                return this.jirField;
-            }
-            set
-            {
-                this.jirField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Greska", IsNullable=false)]
-        public GreskaType[] Greske
-        {
-            get
-            {
-                return this.greskeField;
-            }
-            set
-            {
-                this.greskeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=3)]
-        public SignatureType Signature
-        {
-            get
-            {
-                return this.signatureField;
-            }
-            set
-            {
-                this.signatureField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class prateciDokumentiRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
-        public MAES.Fiskal.PrateciDokumentiZahtjev PrateciDokumentiZahtjev;
-        
-        public prateciDokumentiRequest()
-        {
-        }
-        
-        public prateciDokumentiRequest(MAES.Fiskal.PrateciDokumentiZahtjev PrateciDokumentiZahtjev)
-        {
-            this.PrateciDokumentiZahtjev = PrateciDokumentiZahtjev;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class prateciDokumentiResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
-        public MAES.Fiskal.PrateciDokumentiOdgovor PrateciDokumentiOdgovor;
-        
-        public prateciDokumentiResponse()
-        {
-        }
-        
-        public prateciDokumentiResponse(MAES.Fiskal.PrateciDokumentiOdgovor PrateciDokumentiOdgovor)
-        {
-            this.PrateciDokumentiOdgovor = PrateciDokumentiOdgovor;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class RacunPDZahtjev
-    {
-        
-        private ZaglavljeType zaglavljeField;
-        
-        private RacunPDType racunField;
-        
-        private SignatureType signatureField;
-        
-        private string idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public ZaglavljeType Zaglavlje
-        {
-            get
-            {
-                return this.zaglavljeField;
-            }
-            set
-            {
-                this.zaglavljeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public RacunPDType Racun
-        {
-            get
-            {
-                return this.racunField;
-            }
-            set
-            {
-                this.racunField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=2)]
-        public SignatureType Signature
-        {
-            get
-            {
-                return this.signatureField;
-            }
-            set
-            {
-                this.signatureField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
-    public partial class RacunPDOdgovor
-    {
-        
-        private ZaglavljeOdgovorType zaglavljeField;
-        
-        private string jirField;
-        
-        private GreskaType[] greskeField;
-        
-        private SignatureType signatureField;
-        
-        private string idField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public ZaglavljeOdgovorType Zaglavlje
-        {
-            get
-            {
-                return this.zaglavljeField;
-            }
-            set
-            {
-                this.zaglavljeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Jir
-        {
-            get
-            {
-                return this.jirField;
-            }
-            set
-            {
-                this.jirField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
-        [System.Xml.Serialization.XmlArrayItemAttribute("Greska", IsNullable=false)]
-        public GreskaType[] Greske
-        {
-            get
-            {
-                return this.greskeField;
-            }
-            set
-            {
-                this.greskeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=3)]
-        public SignatureType Signature
-        {
-            get
-            {
-                return this.signatureField;
-            }
-            set
-            {
-                this.signatureField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute()]
-        public string Id
-        {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class racuniPDRequest
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
-        public MAES.Fiskal.RacunPDZahtjev RacunPDZahtjev;
-        
-        public racuniPDRequest()
-        {
-        }
-        
-        public racuniPDRequest(MAES.Fiskal.RacunPDZahtjev RacunPDZahtjev)
-        {
-            this.RacunPDZahtjev = RacunPDZahtjev;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class racuniPDResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
-        public MAES.Fiskal.RacunPDOdgovor RacunPDOdgovor;
-        
-        public racuniPDResponse()
-        {
-        }
-        
-        public racuniPDResponse(MAES.Fiskal.RacunPDOdgovor RacunPDOdgovor)
-        {
-            this.RacunPDOdgovor = RacunPDOdgovor;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class PromijeniNacPlacZahtjev
@@ -3967,7 +4152,7 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class PromijeniNacPlacOdgovor
@@ -4056,7 +4241,7 @@ namespace MAES.Fiskal
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class promijeniNacPlacRequest
@@ -4076,7 +4261,7 @@ namespace MAES.Fiskal
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class promijeniNacPlacResponse
@@ -4096,7 +4281,7 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class NapojnicaZahtjev
@@ -4168,7 +4353,7 @@ namespace MAES.Fiskal
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
     public partial class NapojnicaOdgovor
@@ -4257,7 +4442,7 @@ namespace MAES.Fiskal
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class napojnicaRequest
@@ -4277,7 +4462,7 @@ namespace MAES.Fiskal
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class napojnicaResponse
@@ -4296,8 +4481,1126 @@ namespace MAES.Fiskal
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PromijeniPodatkeRacunaZahtjev
+    {
+        
+        private ZaglavljeType zaglavljeField;
+        
+        private RacunPPType racunField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public RacunPPType Racun
+        {
+            get
+            {
+                return this.racunField;
+            }
+            set
+            {
+                this.racunField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=2)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PromijeniPodatkeRacunaOdgovor
+    {
+        
+        private ZaglavljeOdgovorType zaglavljeField;
+        
+        private PorukaOdgovoraType porukaOdgovoraField;
+        
+        private GreskaType[] greskeField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeOdgovorType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PorukaOdgovoraType PorukaOdgovora
+        {
+            get
+            {
+                return this.porukaOdgovoraField;
+            }
+            set
+            {
+                this.porukaOdgovoraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Greska", IsNullable=false)]
+        public GreskaType[] Greske
+        {
+            get
+            {
+                return this.greskeField;
+            }
+            set
+            {
+                this.greskeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=3)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class promijeniPodatkeRacunaRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.PromijeniPodatkeRacunaZahtjev PromijeniPodatkeRacunaZahtjev;
+        
+        public promijeniPodatkeRacunaRequest()
+        {
+        }
+        
+        public promijeniPodatkeRacunaRequest(MAES.Fiskal.PromijeniPodatkeRacunaZahtjev PromijeniPodatkeRacunaZahtjev)
+        {
+            this.PromijeniPodatkeRacunaZahtjev = PromijeniPodatkeRacunaZahtjev;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class promijeniPodatkeRacunaResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.PromijeniPodatkeRacunaOdgovor PromijeniPodatkeRacunaOdgovor;
+        
+        public promijeniPodatkeRacunaResponse()
+        {
+        }
+        
+        public promijeniPodatkeRacunaResponse(MAES.Fiskal.PromijeniPodatkeRacunaOdgovor PromijeniPodatkeRacunaOdgovor)
+        {
+            this.PromijeniPodatkeRacunaOdgovor = PromijeniPodatkeRacunaOdgovor;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PrijaviRadnoVrijemeZahtjev
+    {
+        
+        private ZaglavljeType zaglavljeField;
+        
+        private PoslovniProstorType poslovniProstorField;
+        
+        private string oibOperField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PoslovniProstorType PoslovniProstor
+        {
+            get
+            {
+                return this.poslovniProstorField;
+            }
+            set
+            {
+                this.poslovniProstorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string OibOper
+        {
+            get
+            {
+                return this.oibOperField;
+            }
+            set
+            {
+                this.oibOperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=3)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PrijaviRadnoVrijemeOdgovor
+    {
+        
+        private ZaglavljeOdgovorType zaglavljeField;
+        
+        private PorukaOdgovoraType porukaOdgovoraField;
+        
+        private GreskaType[] greskeField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeOdgovorType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PorukaOdgovoraType PorukaOdgovora
+        {
+            get
+            {
+                return this.porukaOdgovoraField;
+            }
+            set
+            {
+                this.porukaOdgovoraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Greska", IsNullable=false)]
+        public GreskaType[] Greske
+        {
+            get
+            {
+                return this.greskeField;
+            }
+            set
+            {
+                this.greskeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=3)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class prijaviRadnoVrijemeRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.PrijaviRadnoVrijemeZahtjev PrijaviRadnoVrijemeZahtjev;
+        
+        public prijaviRadnoVrijemeRequest()
+        {
+        }
+        
+        public prijaviRadnoVrijemeRequest(MAES.Fiskal.PrijaviRadnoVrijemeZahtjev PrijaviRadnoVrijemeZahtjev)
+        {
+            this.PrijaviRadnoVrijemeZahtjev = PrijaviRadnoVrijemeZahtjev;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class prijaviRadnoVrijemeResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.PrijaviRadnoVrijemeOdgovor PrijaviRadnoVrijemeOdgovor;
+        
+        public prijaviRadnoVrijemeResponse()
+        {
+        }
+        
+        public prijaviRadnoVrijemeResponse(MAES.Fiskal.PrijaviRadnoVrijemeOdgovor PrijaviRadnoVrijemeOdgovor)
+        {
+            this.PrijaviRadnoVrijemeOdgovor = PrijaviRadnoVrijemeOdgovor;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class ObrisiRadnoVrijemeZahtjev
+    {
+        
+        private ZaglavljeType zaglavljeField;
+        
+        private PoslovniProstorType poslovniProstorField;
+        
+        private string oibOperField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PoslovniProstorType PoslovniProstor
+        {
+            get
+            {
+                return this.poslovniProstorField;
+            }
+            set
+            {
+                this.poslovniProstorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string OibOper
+        {
+            get
+            {
+                return this.oibOperField;
+            }
+            set
+            {
+                this.oibOperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=3)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class ObrisiRadnoVrijemeOdgovor
+    {
+        
+        private ZaglavljeOdgovorType zaglavljeField;
+        
+        private PorukaOdgovoraType porukaOdgovoraField;
+        
+        private GreskaType[] greskeField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeOdgovorType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PorukaOdgovoraType PorukaOdgovora
+        {
+            get
+            {
+                return this.porukaOdgovoraField;
+            }
+            set
+            {
+                this.porukaOdgovoraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Greska", IsNullable=false)]
+        public GreskaType[] Greske
+        {
+            get
+            {
+                return this.greskeField;
+            }
+            set
+            {
+                this.greskeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=3)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class obrisiRadnoVrijemeRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.ObrisiRadnoVrijemeZahtjev ObrisiRadnoVrijemeZahtjev;
+        
+        public obrisiRadnoVrijemeRequest()
+        {
+        }
+        
+        public obrisiRadnoVrijemeRequest(MAES.Fiskal.ObrisiRadnoVrijemeZahtjev ObrisiRadnoVrijemeZahtjev)
+        {
+            this.ObrisiRadnoVrijemeZahtjev = ObrisiRadnoVrijemeZahtjev;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class obrisiRadnoVrijemeResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.ObrisiRadnoVrijemeOdgovor ObrisiRadnoVrijemeOdgovor;
+        
+        public obrisiRadnoVrijemeResponse()
+        {
+        }
+        
+        public obrisiRadnoVrijemeResponse(MAES.Fiskal.ObrisiRadnoVrijemeOdgovor ObrisiRadnoVrijemeOdgovor)
+        {
+            this.ObrisiRadnoVrijemeOdgovor = ObrisiRadnoVrijemeOdgovor;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class DohvatiRadnoVrijemeZahtjev
+    {
+        
+        private ZaglavljeType zaglavljeField;
+        
+        private string oibField;
+        
+        private string oznPosPrField;
+        
+        private DohvatiRadnoVrijemeZahtjevVrstaRadnogVremena vrstaRadnogVremenaField;
+        
+        private string oibOperField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Oib
+        {
+            get
+            {
+                return this.oibField;
+            }
+            set
+            {
+                this.oibField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string OznPosPr
+        {
+            get
+            {
+                return this.oznPosPrField;
+            }
+            set
+            {
+                this.oznPosPrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public DohvatiRadnoVrijemeZahtjevVrstaRadnogVremena VrstaRadnogVremena
+        {
+            get
+            {
+                return this.vrstaRadnogVremenaField;
+            }
+            set
+            {
+                this.vrstaRadnogVremenaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string OibOper
+        {
+            get
+            {
+                return this.oibOperField;
+            }
+            set
+            {
+                this.oibOperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=5)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public enum DohvatiRadnoVrijemeZahtjevVrstaRadnogVremena
+    {
+        
+        /// <remarks/>
+        REDOVNO,
+        
+        /// <remarks/>
+        IZNIMKE,
+        
+        /// <remarks/>
+        SVE,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class DohvatiRadnoVrijemeOdgovor
+    {
+        
+        private ZaglavljeOdgovorType zaglavljeField;
+        
+        private PoslovniProstorType poslovniProstorField;
+        
+        private GreskaType[] greskeField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeOdgovorType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public PoslovniProstorType PoslovniProstor
+        {
+            get
+            {
+                return this.poslovniProstorField;
+            }
+            set
+            {
+                this.poslovniProstorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Greska", IsNullable=false)]
+        public GreskaType[] Greske
+        {
+            get
+            {
+                return this.greskeField;
+            }
+            set
+            {
+                this.greskeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=3)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class dohvatiRadnoVrijemeRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.DohvatiRadnoVrijemeZahtjev DohvatiRadnoVrijemeZahtjev;
+        
+        public dohvatiRadnoVrijemeRequest()
+        {
+        }
+        
+        public dohvatiRadnoVrijemeRequest(MAES.Fiskal.DohvatiRadnoVrijemeZahtjev DohvatiRadnoVrijemeZahtjev)
+        {
+            this.DohvatiRadnoVrijemeZahtjev = DohvatiRadnoVrijemeZahtjev;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class dohvatiRadnoVrijemeResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.DohvatiRadnoVrijemeOdgovor DohvatiRadnoVrijemeOdgovor;
+        
+        public dohvatiRadnoVrijemeResponse()
+        {
+        }
+        
+        public dohvatiRadnoVrijemeResponse(MAES.Fiskal.DohvatiRadnoVrijemeOdgovor DohvatiRadnoVrijemeOdgovor)
+        {
+            this.DohvatiRadnoVrijemeOdgovor = DohvatiRadnoVrijemeOdgovor;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PrijaviRadnoVrijemeZaPoslovniceZahtjev
+    {
+        
+        private ZaglavljeType zaglavljeField;
+        
+        private string oibField;
+        
+        private PoslovnicaType[] poslovniProstoriField;
+        
+        private string oibOperField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Oib
+        {
+            get
+            {
+                return this.oibField;
+            }
+            set
+            {
+                this.oibField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=2)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Poslovnica", IsNullable=false)]
+        public PoslovnicaType[] PoslovniProstori
+        {
+            get
+            {
+                return this.poslovniProstoriField;
+            }
+            set
+            {
+                this.poslovniProstoriField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string OibOper
+        {
+            get
+            {
+                return this.oibOperField;
+            }
+            set
+            {
+                this.oibOperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=4)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="http://www.apis-it.hr/fin/2012/types/f73")]
+    public partial class PrijaviRadnoVrijemeZaPoslovniceOdgovor
+    {
+        
+        private ZaglavljeOdgovorType zaglavljeField;
+        
+        private object itemField;
+        
+        private SignatureType signatureField;
+        
+        private string idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public ZaglavljeOdgovorType Zaglavlje
+        {
+            get
+            {
+                return this.zaglavljeField;
+            }
+            set
+            {
+                this.zaglavljeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Greske", typeof(GreskeType), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("PoslovniProstoriOdgovor", typeof(PoslovniProstoriOdgovorType), Order=1)]
+        public object Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#", Order=2)]
+        public SignatureType Signature
+        {
+            get
+            {
+                return this.signatureField;
+            }
+            set
+            {
+                this.signatureField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class prijaviRadnoVrijemeZaPoslovniceRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.PrijaviRadnoVrijemeZaPoslovniceZahtjev PrijaviRadnoVrijemeZaPoslovniceZahtjev;
+        
+        public prijaviRadnoVrijemeZaPoslovniceRequest()
+        {
+        }
+        
+        public prijaviRadnoVrijemeZaPoslovniceRequest(MAES.Fiskal.PrijaviRadnoVrijemeZaPoslovniceZahtjev PrijaviRadnoVrijemeZaPoslovniceZahtjev)
+        {
+            this.PrijaviRadnoVrijemeZaPoslovniceZahtjev = PrijaviRadnoVrijemeZaPoslovniceZahtjev;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class prijaviRadnoVrijemeZaPoslovniceResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.apis-it.hr/fin/2012/types/f73", Order=0)]
+        public MAES.Fiskal.PrijaviRadnoVrijemeZaPoslovniceOdgovor PrijaviRadnoVrijemeZaPoslovniceOdgovor;
+        
+        public prijaviRadnoVrijemeZaPoslovniceResponse()
+        {
+        }
+        
+        public prijaviRadnoVrijemeZaPoslovniceResponse(MAES.Fiskal.PrijaviRadnoVrijemeZaPoslovniceOdgovor PrijaviRadnoVrijemeZaPoslovniceOdgovor)
+        {
+            this.PrijaviRadnoVrijemeZaPoslovniceOdgovor = PrijaviRadnoVrijemeZaPoslovniceOdgovor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class echoRequest
@@ -4317,7 +5620,7 @@ namespace MAES.Fiskal
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class echoResponse
@@ -4336,13 +5639,13 @@ namespace MAES.Fiskal
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     public interface FiskalizacijaPortTypeChannel : MAES.Fiskal.FiskalizacijaPortType, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.2.0-preview1.23462.5")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     public partial class FiskalizacijaPortTypeClient : System.ServiceModel.ClientBase<MAES.Fiskal.FiskalizacijaPortType>, MAES.Fiskal.FiskalizacijaPortType
     {
         
@@ -4400,32 +5703,6 @@ namespace MAES.Fiskal
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MAES.Fiskal.prateciDokumentiResponse> MAES.Fiskal.FiskalizacijaPortType.prateciDokumentiAsync(MAES.Fiskal.prateciDokumentiRequest request)
-        {
-            return base.Channel.prateciDokumentiAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MAES.Fiskal.prateciDokumentiResponse> prateciDokumentiAsync(MAES.Fiskal.PrateciDokumentiZahtjev PrateciDokumentiZahtjev)
-        {
-            MAES.Fiskal.prateciDokumentiRequest inValue = new MAES.Fiskal.prateciDokumentiRequest();
-            inValue.PrateciDokumentiZahtjev = PrateciDokumentiZahtjev;
-            return ((MAES.Fiskal.FiskalizacijaPortType)(this)).prateciDokumentiAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MAES.Fiskal.racuniPDResponse> MAES.Fiskal.FiskalizacijaPortType.racuniPDAsync(MAES.Fiskal.racuniPDRequest request)
-        {
-            return base.Channel.racuniPDAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<MAES.Fiskal.racuniPDResponse> racuniPDAsync(MAES.Fiskal.RacunPDZahtjev RacunPDZahtjev)
-        {
-            MAES.Fiskal.racuniPDRequest inValue = new MAES.Fiskal.racuniPDRequest();
-            inValue.RacunPDZahtjev = RacunPDZahtjev;
-            return ((MAES.Fiskal.FiskalizacijaPortType)(this)).racuniPDAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MAES.Fiskal.promijeniNacPlacResponse> MAES.Fiskal.FiskalizacijaPortType.promijeniNacPlacAsync(MAES.Fiskal.promijeniNacPlacRequest request)
         {
             return base.Channel.promijeniNacPlacAsync(request);
@@ -4452,6 +5729,71 @@ namespace MAES.Fiskal
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MAES.Fiskal.promijeniPodatkeRacunaResponse> MAES.Fiskal.FiskalizacijaPortType.promijeniPodatkeRacunaAsync(MAES.Fiskal.promijeniPodatkeRacunaRequest request)
+        {
+            return base.Channel.promijeniPodatkeRacunaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MAES.Fiskal.promijeniPodatkeRacunaResponse> promijeniPodatkeRacunaAsync(MAES.Fiskal.PromijeniPodatkeRacunaZahtjev PromijeniPodatkeRacunaZahtjev)
+        {
+            MAES.Fiskal.promijeniPodatkeRacunaRequest inValue = new MAES.Fiskal.promijeniPodatkeRacunaRequest();
+            inValue.PromijeniPodatkeRacunaZahtjev = PromijeniPodatkeRacunaZahtjev;
+            return ((MAES.Fiskal.FiskalizacijaPortType)(this)).promijeniPodatkeRacunaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MAES.Fiskal.prijaviRadnoVrijemeResponse> MAES.Fiskal.FiskalizacijaPortType.prijaviRadnoVrijemeAsync(MAES.Fiskal.prijaviRadnoVrijemeRequest request)
+        {
+            return base.Channel.prijaviRadnoVrijemeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MAES.Fiskal.prijaviRadnoVrijemeResponse> prijaviRadnoVrijemeAsync(MAES.Fiskal.PrijaviRadnoVrijemeZahtjev PrijaviRadnoVrijemeZahtjev)
+        {
+            MAES.Fiskal.prijaviRadnoVrijemeRequest inValue = new MAES.Fiskal.prijaviRadnoVrijemeRequest();
+            inValue.PrijaviRadnoVrijemeZahtjev = PrijaviRadnoVrijemeZahtjev;
+            return ((MAES.Fiskal.FiskalizacijaPortType)(this)).prijaviRadnoVrijemeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MAES.Fiskal.obrisiRadnoVrijemeResponse> MAES.Fiskal.FiskalizacijaPortType.obrisiRadnoVrijemeAsync(MAES.Fiskal.obrisiRadnoVrijemeRequest request)
+        {
+            return base.Channel.obrisiRadnoVrijemeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MAES.Fiskal.obrisiRadnoVrijemeResponse> obrisiRadnoVrijemeAsync(MAES.Fiskal.ObrisiRadnoVrijemeZahtjev ObrisiRadnoVrijemeZahtjev)
+        {
+            MAES.Fiskal.obrisiRadnoVrijemeRequest inValue = new MAES.Fiskal.obrisiRadnoVrijemeRequest();
+            inValue.ObrisiRadnoVrijemeZahtjev = ObrisiRadnoVrijemeZahtjev;
+            return ((MAES.Fiskal.FiskalizacijaPortType)(this)).obrisiRadnoVrijemeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MAES.Fiskal.dohvatiRadnoVrijemeResponse> MAES.Fiskal.FiskalizacijaPortType.dohvatiRadnoVrijemeAsync(MAES.Fiskal.dohvatiRadnoVrijemeRequest request)
+        {
+            return base.Channel.dohvatiRadnoVrijemeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MAES.Fiskal.dohvatiRadnoVrijemeResponse> dohvatiRadnoVrijemeAsync(MAES.Fiskal.DohvatiRadnoVrijemeZahtjev DohvatiRadnoVrijemeZahtjev)
+        {
+            MAES.Fiskal.dohvatiRadnoVrijemeRequest inValue = new MAES.Fiskal.dohvatiRadnoVrijemeRequest();
+            inValue.DohvatiRadnoVrijemeZahtjev = DohvatiRadnoVrijemeZahtjev;
+            return ((MAES.Fiskal.FiskalizacijaPortType)(this)).dohvatiRadnoVrijemeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<MAES.Fiskal.prijaviRadnoVrijemeZaPoslovniceResponse> MAES.Fiskal.FiskalizacijaPortType.prijaviRadnoVrijemeZaPoslovniceAsync(MAES.Fiskal.prijaviRadnoVrijemeZaPoslovniceRequest request)
+        {
+            return base.Channel.prijaviRadnoVrijemeZaPoslovniceAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<MAES.Fiskal.prijaviRadnoVrijemeZaPoslovniceResponse> prijaviRadnoVrijemeZaPoslovniceAsync(MAES.Fiskal.PrijaviRadnoVrijemeZaPoslovniceZahtjev PrijaviRadnoVrijemeZaPoslovniceZahtjev)
+        {
+            MAES.Fiskal.prijaviRadnoVrijemeZaPoslovniceRequest inValue = new MAES.Fiskal.prijaviRadnoVrijemeZaPoslovniceRequest();
+            inValue.PrijaviRadnoVrijemeZaPoslovniceZahtjev = PrijaviRadnoVrijemeZaPoslovniceZahtjev;
+            return ((MAES.Fiskal.FiskalizacijaPortType)(this)).prijaviRadnoVrijemeZaPoslovniceAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<MAES.Fiskal.echoResponse> MAES.Fiskal.FiskalizacijaPortType.echoAsync(MAES.Fiskal.echoRequest request)
         {
             return base.Channel.echoAsync(request);
@@ -4468,6 +5810,13 @@ namespace MAES.Fiskal
         {
             return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndOpen));
         }
+        
+        #if !NET6_0_OR_GREATER
+        public virtual System.Threading.Tasks.Task CloseAsync()
+        {
+            return System.Threading.Tasks.Task.Factory.FromAsync(((System.ServiceModel.ICommunicationObject)(this)).BeginClose(null, null), new System.Action<System.IAsyncResult>(((System.ServiceModel.ICommunicationObject)(this)).EndClose));
+        }
+        #endif
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration)
         {
@@ -4488,7 +5837,7 @@ namespace MAES.Fiskal
         {
             if ((endpointConfiguration == EndpointConfiguration.FiskalizacijaPortType))
             {
-                return new System.ServiceModel.EndpointAddress("https://cis.porezna-uprava.hr:8449/FiskalizacijaService");
+                return new System.ServiceModel.EndpointAddress("https://cistest.apis-it.hr:8449/FiskalizacijaServiceTest");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
