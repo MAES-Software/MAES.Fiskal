@@ -1,0 +1,58 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/MAES.Fiskal.csproj",
+                "--configuration",
+                "Release"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Pack",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "pack",
+                "${workspaceFolder}/MAES.Fiskal.csproj",
+                "--configuration",
+                "Release"
+            ],
+            "dependsOn": "Build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Push",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "nuget",
+                "push",
+                "${workspaceFolder}/bin/Release/MAES.Fiskal.1.2.0.nupkg",
+                "--api-key",
+                "${input:nugetApiKey}",
+                "--source",
+                "https://api.nuget.org/v3/index.json"
+            ],
+            "dependsOn": "Pack",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "nugetApiKey",
+            "type": "promptString",
+            "description": "Enter your NuGet API Key",
+            "password": true
+        }
+    ]
+}

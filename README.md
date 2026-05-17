@@ -5,9 +5,11 @@
 [![Stars](https://img.shields.io/github/stars/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/stargazers)
 [![Issues](https://img.shields.io/github/issues/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/issues)
 [![License](https://img.shields.io/github/license/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/LICENSE)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL_HERE)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/company/maes-software/)
 
 **MAES.Fiskal** is a fiscalization tool for invoices developed in **C#** using **.NET 8**. It enables automatic generation and submission of fiscal data according to current regulations.
+
+Latest version: 1.2.0
 
 ## Requirements
 1. .NET 8+
@@ -140,63 +142,3 @@ ReferenceTypeExtensions.SslCertificateAuthentication = new()
 ```
 
 > **Warning:** Disabling SSL certificate validation is **not recommended** for production environments, as it reduces security and exposes your application to potential risks. Use this option only for testing or troubleshooting purposes.
-
-## Development
-
-### Example tasks.json
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "Build",
-            "type": "shell",
-            "command": "dotnet build",
-            "args": [
-                "${workspaceFolder}/MAES.Fiskal.csproj",
-                "--configuration",
-                "Release"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "Pack",
-            "type": "shell",
-            "command": "dotnet pack",
-            "args": [
-                "${workspaceFolder}/MAES.Fiskal.csproj",
-                "--configuration",
-                "Release"
-            ],
-            "dependsOn": "Build",
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "Push",
-            "type": "shell",
-            "command": "dotnet nuget push",
-            "args": [
-                "${workspaceFolder}/bin/Release/*.nupkg",
-                "--api-key",
-                "${input:nugetApiKey}",
-                "--source",
-                "https://api.nuget.org/v3/index.json"
-            ],
-            "dependsOn": "Pack",
-            "problemMatcher": []
-        }
-    ],
-    "inputs": [
-        {
-            "id": "nugetApiKey",
-            "type": "promptString",
-            "description": "Enter your NuGet API Key",
-            "password": true
-        }
-    ]
-}
-```
