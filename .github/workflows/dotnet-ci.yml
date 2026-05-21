@@ -30,8 +30,8 @@ jobs:
           CERT_P12_BASE64: ${{ secrets.CERT_P12 }}
         run: |
           if [ -n "$CERT_P12_BASE64" ]; then
-            echo "$CERT_P12_BASE64" | base64 -d > MAES.Fiskal.Tests/cert.p12
-            echo "Certificate created successfully"
+            echo "$CERT_P12_BASE64" | base64 -d > cert.p12
+            echo "Certificate created successfully at workspace root"
           else
             echo "CERT_P12 secret not set - tests will skip certificate-dependent tests"
           fi

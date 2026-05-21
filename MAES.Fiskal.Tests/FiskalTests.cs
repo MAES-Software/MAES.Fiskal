@@ -1,11 +1,31 @@
 ﻿namespace MAES.Fiskal.Tests;
 
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel.Security;
 
 public class FiskalTests
 {
-    X509Certificate2 certificate => X509CertificateLoader.LoadPkcs12FromFile("cert.p12", "");
+    private static string GetCertificatePath()
+    {
+        // Try multiple locations for the cert file
+        var searchPaths = new[]
+        {
+            "cert.p12",  // Current directory
+            "../../../cert.p12",  // From bin/Release/net10.0
+            "../cert.p12",  // From test project folder
+        };
+
+        foreach (var path in searchPaths)
+        {
+            if (File.Exists(path))
+                return Path.GetFullPath(path);
+        }
+
+        throw new FileNotFoundException("Certificate file 'cert.p12' not found in any expected location");
+    }
+
+    X509Certificate2 certificate => X509CertificateLoader.LoadPkcs12FromFile(GetCertificatePath(), "");
 
     string testUrl => "https://cistest.apis-it.hr:8449/FiskalizacijaServiceTest";
 
