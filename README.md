@@ -2,139 +2,117 @@
 
 [![CI/CD](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/main.yml/badge.svg)](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/main.yml)
 [![Contributors](https://img.shields.io/github/contributors/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/graphs/contributors)
-[![Forks](https://img.shields.io/github/forks/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/network/members)
-[![Stars](https://img.shields.io/github/stars/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/stargazers)
 [![Issues](https://img.shields.io/github/issues/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/issues)
-[![License](https://img.shields.io/github/license/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/LICENSE)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/company/maes-software/)
 [![NuGet](https://img.shields.io/nuget/v/MAES.Fiskal.svg)](https://www.nuget.org/packages/MAES.Fiskal/)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/MAES.Fiskal)](https://www.nuget.org/packages/MAES.Fiskal/)
 
-**MAES.Fiskal** is a fiscalization tool for invoices developed in **C#** using **.NET 8**. It enables automatic generation and submission of fiscal data according to current regulations.
+MAES.Fiskal is a .NET library (C#) that helps generate and submit fiscalized invoice data according to the Croatian fiscalization service.
 
-Latest version: 1.2.0
+Using Fiscalization WSDL version 2.6 (thanks maatko)
 
-## Requirements
-1. .NET 8+
-2. Fiscalization WSDL ver. 2.6
+**Key points**
+- Targets .NET Standard 2.0
+    * .NET Framework 4.6+
+    * .NET 5+
+- Provides ZKI generation, invoice submission and invoice-tip submission helpers
 
 ## Features
-- ZKI Generation
+- ZKI generation
 - Invoice fiscalization
 - Tip fiscalization
-- Free and open source
+
+## Requirements
+- .NET Standard 2.0
 
 ## Installation
-**Nuget:** https://www.nuget.org/packages/MAES.Fiskal
 
-or
+Via NuGet:
+
+```powershell
+dotnet add package MAES.Fiskal
+```
+
+Or clone the repository:
 
 ```bash
 git clone https://github.com/MAES-Software/MAES.Fiskal.git
 ```
 
-### Define endpoint address (Url)
-1.  Demo endpoint
-    ```csharp
-    string url = "https://cistest.apis-it.hr:8449/FiskalizacijaServiceTest";
-    ```
-2.  Poduction endpoint
-    ```csharp
-    string url = "https://cis.porezna-uprava.hr:8449/FiskalizacijaService";
-    ```
+## Configuration
 
-### Load X509Certificate2
-1. From file (You can use relative path eg. "./cert.p12")
-    ```csharp
-    var certificate = new X509Certificate2("filename");
-    ```
-2. From some data stream with byte[] bytes
-    ```csharp
-    var certificate = new X509Certificate2(bytes);
-    ```
+Endpoints:
 
-You must also supply password for given certificate if it has one (by default certificates given from goverment are locked but they can be repackaged)
+- TEST URL: `https://cistest.apis-it.hr:8449/FiskalizacijaServiceTest`
+- PROD URL: `https://cis.porezna-uprava.hr:8449/FiskalizacijaService`
+
+Loading an X509 certificate (examples):
+
 ```csharp
-var certificate = new X509Certificate2("filename", "password");
+// From file
+var certificate = new X509Certificate2("./cert.p12", "password");
+
+// From raw bytes
+var certificate = new X509Certificate2(bytes, "password");
 ```
 
-## Usage Example
+Supply the certificate password when required by the key store provided by the issuing authority.
 
-### Define using MAES.Fiskal to get all classes for fiscalization
+## Usage
+
+Import the library:
+
 ```csharp
 using MAES.Fiskal;
 ```
 
-### Sending invoice
-1.  Create invoice
-    ```csharp
-    var invoice = new RacunType
-    {
-    	BrRac = new BrojRacunaType
-    	{
-    		BrOznRac = "1", // Invoice number (incremental for each receipt)
-    		OznPosPr = "POSL1", // Workspace code
-    		OznNapUr = "1" // Cash reegister number
-    	},
-    	DatVrijeme = DateTime.Now.ToString("dd.MM.yyyyTHH:mm:ss"), // DateTime of invoice
-    	IznosUkupno = "12.50", // Total amount (must be format 0.00)
-    	NakDost = false,
-    	Oib = "51560545524", // Identification number of company
-    	OibOper = "51560545524", // Odentitfication numer of person operating POS
-    	OznSlijed = OznakaSlijednostiType.N,
-        Pdv = [ // Taxes list
-            new ()
-            {
-                Stopa = "25.00", // Tax percentage (must be format 0.00)
-                Osnovica = "10.00", // Tax base (must be format 0.00)
-                Iznos = "2.50" // Tax amount (must be format 0.00)
-            }
-        ],
-        Pnp = [], // Fill tax on spending if nececary :S (if empty it this must not be present or fucking xml will start retardmaxxing)
-        USustPdv = true, // Does company falls under tax obligation laws
-        NacinPlac = NacinPlacanjaType.G // Type of payment (G - Cash, K - Cards, etc...)
-    };
-    ```
-2.  Send invoice
-    ```csharp
-    // Call to service
-    var res = await invoice.SendAsync(certificate, url);
+Create a simple invoice and submit it (example, types simplified for readability):
 
-    // Check if there are errors
-    if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
+```csharp
+var invoice = new RacunType
+{
+    BrRac = new BrojRacunaType { BrOznRac = "1", OznPosPr = "POSL1", OznNapUr = "1" },
+    DatVrijeme = DateTime.Now.ToString("dd.MM.yyyyTHH:mm:ss"),
+    IznosUkupno = "12.50",
+    NakDost = false,
+    Oib = "51560545524",
+    OibOper = "51560545524",
+    OznSlijed = OznakaSlijednostiType.N,
+    Pdv = new[] { new PdvType { Stopa = "25.00", Osnovica = "10.00", Iznos = "2.50" } },
+    Pnp = Array.Empty<PnpType>(),
+    USustPdv = true,
+    NacinPlac = NacinPlacanjaType.G
+};
 
-    // Get jir to store
-    string jir = res.Jir;
-    ```
+var response = await invoice.SendAsync(certificate, url);
+if (response.Greske != null && response.Greske.Length > 0)
+{
+    Console.WriteLine(string.Join(',', response.Greske));
+}
+else
+{
+    string jir = response.Jir; // store this as required
+}
+```
 
-### Sending invoice tip
-1.  Create RacunNapojnicaType from RacunType with NapojnicaTypee as parameter
-    ```csharp
-    RacunNapojnicaType invoiceTip = invoice.ToInvoiceTipAsnyc(new ()
-    {
-        iznosNapojnice = "1.00", // Tip amount
-        nacinPlacanjaNapojnice = NacinPlacanjaType.G // Tip type of payment (G - Cash, K - Cards, etc...)
-    });
-    ```
+Create and send a tip (napojnica) from an existing invoice:
 
-2.  Send RacunNapojnicaType
-    ```csharp
-    // Call to service
-    var res = await invoiceTip.SendAsync(certificate, url);
+```csharp
+var tip = invoice.ToInvoiceTip(new NapojnicaParameters { IznosNapojnice = "1.00", NacinPlacanjaNapojnice = NacinPlacanjaType.G });
+var tipRes = await tip.SendAsync(certificate, url);
+if (tipRes.Greske != null && tipRes.Greske.Length > 0) Console.WriteLine(string.Join(',', tipRes.Greske));
+```
 
-    // Check if there are errors
-    if(res.Greske.Length != 0) Console.WriteLine(res.Greske.Join(','));
-    ```
+Generate ZKI (example):
 
-### Generate ZKI
 ```csharp
 string zki = invoice.ZKI(certificate);
 ```
-> Both invoice and invoiceTip have .ZKI(certificate) methods
 
-### Disabling SSL Certificate Validation (Not Recommended)
+## Security notes
 
-If you encounter issues with SSL certificate validation, you can disable certificate checks as follows:
+- Do not disable SSL certificate validation in production. The library provides a way to override validation for local testing, but this weakens security.
+
+If you need to disable validation for troubleshooting (NOT recommended):
 
 ```csharp
 ReferenceTypeExtensions.SslCertificateAuthentication = new()
@@ -143,5 +121,3 @@ ReferenceTypeExtensions.SslCertificateAuthentication = new()
     RevocationMode = X509RevocationMode.NoCheck
 };
 ```
-
-> **Warning:** Disabling SSL certificate validation is **not recommended** for production environments, as it reduces security and exposes your application to potential risks. Use this option only for testing or troubleshooting purposes.
