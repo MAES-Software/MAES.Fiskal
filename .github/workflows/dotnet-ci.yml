@@ -25,6 +25,13 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore MAES.Fiskal.Tests/MAES.Fiskal.Tests.csproj
 
+      - name: Create certificate from secret
+        if: secrets.CERT_P12 != ''
+        env:
+          CERT_P12_BASE64: ${{ secrets.CERT_P12 }}
+        run: |
+          echo "$CERT_P12_BASE64" | base64 -d > MAES.Fiskal.Tests/cert.p12
+
       - name: Run tests
         run: dotnet test MAES.Fiskal.Tests/MAES.Fiskal.Tests.csproj --configuration Release --no-restore
 
