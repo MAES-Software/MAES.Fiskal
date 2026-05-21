@@ -1,12 +1,14 @@
 # MAES.Fiskal
 
-[![CI/CD](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/main.yml)
+[![CI/CD](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/main.yml/badge.svg)](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/main.yml)
 [![Contributors](https://img.shields.io/github/contributors/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/graphs/contributors)
 [![Forks](https://img.shields.io/github/forks/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/network/members)
 [![Stars](https://img.shields.io/github/stars/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/stargazers)
 [![Issues](https://img.shields.io/github/issues/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/issues)
 [![License](https://img.shields.io/github/license/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/LICENSE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/company/maes-software/)
+[![NuGet](https://img.shields.io/nuget/v/MAES.Fiskal.svg)](https://www.nuget.org/packages/MAES.Fiskal/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/MAES.Fiskal)](https://www.nuget.org/packages/MAES.Fiskal/)
 
 **MAES.Fiskal** is a fiscalization tool for invoices developed in **C#** using **.NET 8**. It enables automatic generation and submission of fiscal data according to current regulations.
 
