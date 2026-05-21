@@ -6,6 +6,7 @@ using System.ServiceModel.Security;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
+using System.Numerics;
 
 namespace MAES.Fiskal;
 
@@ -40,8 +41,8 @@ public static class ReferenceTypeExtensions
     /// <exception cref="ArgumentNullException"></exception>
     public static async Task<RacunOdgovor> SendAsync(this RacunType invoice, X509Certificate2 certificate, string url)
     {
-        ArgumentNullException.ThrowIfNull(invoice);
-        ArgumentNullException.ThrowIfNull(certificate);
+        if (invoice is null) throw new ArgumentNullException(nameof(invoice));
+        if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
         if (string.IsNullOrEmpty(invoice.ZastKod)) invoice.ZastKod = invoice.ZKI(certificate);
 
@@ -70,8 +71,8 @@ public static class ReferenceTypeExtensions
     /// <exception cref="ArgumentNullException"></exception>
     public async static Task<napojnicaResponse> SendAsync(this RacunNapojnicaType invoiceTip, X509Certificate2 certificate, string url)
     {
-        ArgumentNullException.ThrowIfNull(invoiceTip);
-        ArgumentNullException.ThrowIfNull(certificate);
+        if (invoiceTip is null) throw new ArgumentNullException(nameof(invoiceTip));
+        if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
         if (string.IsNullOrEmpty(invoiceTip.ZastKod)) invoiceTip.ZastKod = invoiceTip.ZKI(certificate);
 
@@ -130,11 +131,12 @@ public static class ReferenceTypeExtensions
     /// <returns>ZKI string (Maybe GUID idk...)</returns>
     public static string ZKI(this RacunType invoice, X509Certificate2 certificate)
     {
-        ArgumentNullException.ThrowIfNull(certificate);
+        if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
         var b = Encoding.ASCII.GetBytes(invoice.Oib + invoice.DatVrijeme + invoice.BrRac.BrOznRac + invoice.BrRac.OznPosPr + invoice.BrRac.OznNapUr + invoice.IznosUkupno);
         var signData = (certificate.GetRSAPrivateKey()?.SignData(b, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1)) ?? throw new Exception("Invalid cerrtificate. No RSA Private key.");
-        return new string([.. MD5.HashData(signData).SelectMany(x => x.ToString("x2"))]);
+        var hash = MD5.Create().ComputeHash(signData);
+        return string.Concat(hash.Select(x => x.ToString("x2")));
     }
 
     /// <summary>
@@ -145,11 +147,12 @@ public static class ReferenceTypeExtensions
     /// <returns>ZKI string (Maybe GUID idk...)</returns>
     public static string ZKI(this RacunNapojnicaType invoiceTip, X509Certificate2 certificate)
     {
-        ArgumentNullException.ThrowIfNull(certificate);
+        if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
         var b = Encoding.ASCII.GetBytes(invoiceTip.Oib + invoiceTip.DatVrijeme + invoiceTip.BrRac.BrOznRac + invoiceTip.BrRac.OznPosPr + invoiceTip.BrRac.OznNapUr + invoiceTip.IznosUkupno);
         var signData = (certificate.GetRSAPrivateKey()?.SignData(b, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1)) ?? throw new Exception("Invalid cerrtificate. No RSA Private key.");
-        return new string([.. MD5.HashData(signData).SelectMany(x => x.ToString("x2"))]);
+        var hash2 = MD5.Create().ComputeHash(signData);
+        return string.Concat(hash2.Select(x => x.ToString("x2")));
     }
     
     static void sign(dynamic request, X509Certificate2 certificate)
@@ -191,58 +194,66 @@ public static class ReferenceTypeExtensions
 
         var s = xml.Signature;
 
-        if (keyInfoData.IssuerSerials[0] is not X509IssuerSerial serial) throw new Exception("There is no issuer serial in supplied certificate");
+        // Use certificate values directly (avoids depending on internal X509IssuerSerial type)
+        var certIssuerName = certificate.Issuer;
+        // Convert hex serial to decimal string for XML schema compatibility
+        string HexToDecimalString(string hex)
+        {
+            if (string.IsNullOrEmpty(hex)) return string.Empty;
+            var bytes = Enumerable.Range(0, hex.Length)
+                .Where(i => i % 2 == 0)
+                .Select(i => Convert.ToByte(hex.Substring(i, 2), 16))
+                .ToArray();
+            var little = bytes.Reverse().ToArray();
+            var bigInt = new BigInteger(little.Concat(new byte[] { 0 }).ToArray());
+            return bigInt.ToString();
+        }
 
-        var certSerial = serial;
+        var certSerialNumber = HexToDecimalString(certificate.GetSerialNumberString());
+
         request.Signature = new SignatureType
         {
             SignedInfo = new SignedInfoType
             {
                 CanonicalizationMethod = new CanonicalizationMethodType { Algorithm = s.SignedInfo.CanonicalizationMethod },
                 SignatureMethod = new SignatureMethodType { Algorithm = s.SignedInfo.SignatureMethod },
-                Reference =
-                    (from x in s.SignedInfo.References.OfType<Reference>()
-                     select new ReferenceType
-                     {
-                         URI = x.Uri,
-                         Transforms =
-                             (from t in transforms
-                              select new TransformType { Algorithm = t.Algorithm }).ToArray(),
-                         DigestMethod = new DigestMethodType { Algorithm = x.DigestMethod },
-                         DigestValue = x.DigestValue
-                     }).ToArray()
+                Reference = (from x in s.SignedInfo.References.OfType<Reference>()
+                             select new ReferenceType
+                             {
+                                 URI = x.Uri,
+                                 Transforms = (from t in transforms
+                                               select new TransformType { Algorithm = t.Algorithm }).ToArray(),
+                                 DigestMethod = new DigestMethodType { Algorithm = x.DigestMethod },
+                                 DigestValue = x.DigestValue
+                             }).ToArray()
             },
             SignatureValue = new SignatureValueType { Value = s.SignatureValue },
             KeyInfo = new KeyInfoType
             {
-                ItemsElementName = [ItemsChoiceType2.X509Data],
-                Items =
-                [
+                ItemsElementName = new ItemsChoiceType2[] { ItemsChoiceType2.X509Data },
+                Items = new object[]
+                {
                     new X509DataType
                     {
-                        ItemsElementName =
-                        [
-                            ItemsChoiceType.X509IssuerSerial,
-                            ItemsChoiceType.X509Certificate
-                        ],
-                        Items =
-                        [
+                        ItemsElementName = new ItemsChoiceType[] { ItemsChoiceType.X509IssuerSerial, ItemsChoiceType.X509Certificate },
+                        Items = new object[]
+                        {
                             new X509IssuerSerialType
                             {
-                                X509IssuerName = certSerial.IssuerName,
-                                X509SerialNumber = certSerial.SerialNumber
+                                X509IssuerName = certIssuerName,
+                                X509SerialNumber = certSerialNumber
                             },
                             certificate.RawData
-                        ]
+                        }
                     }
-                ]
+                }
             }
         };
     }
 
     static void throwOnResponseErrors(dynamic response)
     {
-        if (response.Greske is not GreskaType[] greske || greske.Length != 0) return;
+        if (response.Greske is not GreskaType[] greske || greske.Length == 0) return;
         throw new Exception($"Greška u fiskalizaciji: {string.Join("\n", greske.Select(x => $"{x.SifraGreske}: {x.PorukaGreske}"))}");
     }
 }

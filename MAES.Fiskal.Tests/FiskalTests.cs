@@ -44,7 +44,7 @@ public class FiskalTests
         Oib = "18945722090",
         OibOper = "18945722090",
         OznSlijed = OznakaSlijednostiType.N,
-        Pdv = [ new() { Stopa = "25.00", Osnovica = "80.00", Iznos = "20.00" } ],
+        Pdv = new PorezType[] { new PorezType { Stopa = "25.00", Osnovica = "80.00", Iznos = "20.00" } },
         USustPdv = true,
         NacinPlac = NacinPlacanjaType.G
     };

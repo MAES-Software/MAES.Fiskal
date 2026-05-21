@@ -16,14 +16,15 @@ var invoice = new RacunType
 	Oib = "18945722090", // Identification number of company
 	OibOper = "18945722090", // Odentitfication numer of person operating POS
 	OznSlijed = OznakaSlijednostiType.N,
-    Pdv = [ // Taxes list
-        new ()
-        {
-            Stopa = "25.00", // Tax percentage (must be format 0.00)
-            Osnovica = "10.00", // Tax base (must be format 0.00)
-            Iznos = "2.50" // Tax amount (must be format 0.00)
-        }
-    ],
+	Pdv = new PorezType[]
+	{ // Taxes list
+		new PorezType
+		{
+			Stopa = "25.00", // Tax percentage (must be format 0.00)
+			Osnovica = "10.00", // Tax base (must be format 0.00)
+			Iznos = "2.50" // Tax amount (must be format 0.00)
+		}
+	},
     USustPdv = true, // Does company falls under tax obligation laws
     NacinPlac = NacinPlacanjaType.G // Type of payment (G - Cash, K - Cards, etc...)
 };

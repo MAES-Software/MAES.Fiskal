@@ -1,4 +1,4 @@
-# MAES.Fiskal
+﻿# MAES.Fiskal
 
 [![CI/CD](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/main.yml/badge.svg)](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/main.yml)
 [![Contributors](https://img.shields.io/github/contributors/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/graphs/contributors)
