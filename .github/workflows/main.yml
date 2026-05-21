@@ -1,4 +1,4 @@
-name: .NET CI
+name: CI/CD
 
 on:
   push:
@@ -57,6 +57,9 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore MAES.Fiskal/MAES.Fiskal.csproj
 
+      - name: Build library
+        run: dotnet build MAES.Fiskal/MAES.Fiskal.csproj --configuration Release --no-restore
+
       - name: Determine package version
         id: version
         run: |
@@ -66,7 +69,8 @@ jobs:
           echo "Pack version: $PACKAGE_VERSION"
 
       - name: Pack library
-        run: dotnet pack MAES.Fiskal/MAES.Fiskal.csproj --configuration Release --output ./artifacts --no-restore /p:PackageVersion=${{ env.PACKAGE_VERSION }}
+        # Use existing build outputs; avoid rebuilding here
+        run: dotnet pack MAES.Fiskal/MAES.Fiskal.csproj --configuration Release --output ./artifacts --no-restore --no-build /p:PackageVersion=${{ env.PACKAGE_VERSION }}
 
       - name: Publish package to NuGet
         env:
