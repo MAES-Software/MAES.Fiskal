@@ -1,0 +1,68 @@
+name: .NET CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore MAES.Fiskal.Tests/MAES.Fiskal.Tests.csproj
+
+      - name: Run tests
+        run: dotnet test MAES.Fiskal.Tests/MAES.Fiskal.Tests.csproj --configuration Release --no-restore
+
+  pack-and-publish:
+    name: Pack and publish package
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore MAES.Fiskal/MAES.Fiskal.csproj
+
+      - name: Determine package version
+        id: version
+        run: |
+          VERSION_PREFIX=$(grep -oPm1 "(?<=<Version>)[^<]+" MAES.Fiskal/MAES.Fiskal.csproj)
+          PACKAGE_VERSION="${VERSION_PREFIX%.*}.${GITHUB_RUN_NUMBER}"
+          echo "PACKAGE_VERSION=$PACKAGE_VERSION" >> $GITHUB_ENV
+          echo "Pack version: $PACKAGE_VERSION"
+
+      - name: Pack library
+        run: dotnet pack MAES.Fiskal/MAES.Fiskal.csproj --configuration Release --output ./artifacts --no-restore /p:PackageVersion=${{ env.PACKAGE_VERSION }}
+
+      - name: Publish package to NuGet
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          PACKAGE_VERSION: ${{ env.PACKAGE_VERSION }}
+        run: |
+          dotnet nuget push "./artifacts/*.nupkg" \
+            --api-key "$NUGET_API_KEY" \
+            --source https://api.nuget.org/v3/index.json \
+            --skip-duplicate
