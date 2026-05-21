@@ -45,6 +45,46 @@
             ],
             "dependsOn": "Pack",
             "problemMatcher": []
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "test",
+                "${workspaceFolder}/MAES.Fiskal.Tests",
+                "--verbosity",
+                "normal"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Build Example",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/MAES.Fiskal.Example",
+                "--configuration",
+                "Debug"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Run Example",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}/MAES.Fiskal.Example"
+            ],
+            "dependsOn": "Build Example",
+            "problemMatcher": []
         }
     ],
     "inputs": [

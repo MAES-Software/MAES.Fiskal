@@ -9,7 +9,7 @@
 
 namespace MAES.Fiskal
 {
-    
+    #pragma warning disable 1591
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "8.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.apis-it.hr/fin/2012/services/FiskalizacijaService", ConfigurationName="MAES.Fiskal.FiskalizacijaPortType")]

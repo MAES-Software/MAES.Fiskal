@@ -70,7 +70,7 @@ using MAES.Fiskal;
     	BrRac = new BrojRacunaType
     	{
     		BrOznRac = "1", // Invoice number (incremental for each receipt)
-    		OznPosPr = "POSL_1", // Workspace code
+    		OznPosPr = "POSL1", // Workspace code
     		OznNapUr = "1" // Cash reegister number
     	},
     	DatVrijeme = DateTime.Now.ToString("dd.MM.yyyyTHH:mm:ss"), // DateTime of invoice
@@ -87,9 +87,9 @@ using MAES.Fiskal;
                 Iznos = "2.50" // Tax amount (must be format 0.00)
             }
         ],
-        Pnp = [], // Fill tax on spending if nececary :S
+        Pnp = [], // Fill tax on spending if nececary :S (if empty it this must not be present or fucking xml will start retardmaxxing)
         USustPdv = true, // Does company falls under tax obligation laws
-        NacPlac = NacinPlacanjaType.G // Type of payment (G - Cash, K - Cards, etc...)
+        NacinPlac = NacinPlacanjaType.G // Type of payment (G - Cash, K - Cards, etc...)
     };
     ```
 2.  Send invoice
