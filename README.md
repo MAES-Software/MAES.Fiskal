@@ -1,5 +1,6 @@
 # MAES.Fiskal
 
+[![CI/CD](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/MAES-Software/MAES.Fiskal/actions/workflows/main.yml)
 [![Contributors](https://img.shields.io/github/contributors/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/graphs/contributors)
 [![Forks](https://img.shields.io/github/forks/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/network/members)
 [![Stars](https://img.shields.io/github/stars/MAES-Software/MAES.Fiskal)](https://github.com/MAES-Software/MAES.Fiskal/stargazers)
@@ -142,5 +143,3 @@ ReferenceTypeExtensions.SslCertificateAuthentication = new()
 ```
 
 > **Warning:** Disabling SSL certificate validation is **not recommended** for production environments, as it reduces security and exposes your application to potential risks. Use this option only for testing or troubleshooting purposes.
-
-Test push
